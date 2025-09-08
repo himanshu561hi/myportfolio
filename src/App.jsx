@@ -8,7 +8,6 @@ import Experience from './components/experience';
 import Qualification from './components/qualification';
 import Contact from './components/contact'; 
 import Footer from './components/footer'; 
-import ParticlesBackground from './components/ParticlesBackground';
 
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(() => {
@@ -31,16 +30,15 @@ function App() {
 
   return (
     <div className="bg-white dark:bg-gray-950 transition-colors duration-300 min-h-screen text-gray-800 dark:text-white">
-       <ParticlesBackground isDarkMode={isDarkMode} />
       <Navbar isDarkMode={isDarkMode} toggleTheme={toggleTheme} />
       <HeroSection isDarkMode={isDarkMode} />
       <About isDarkMode={isDarkMode} /> 
       <Projects isDarkMode={isDarkMode} />
       <Skills isDarkMode={isDarkMode} />
       <Experience isDarkMode={isDarkMode} />
-       <Qualification isDarkMode={isDarkMode} />
-         <Contact isDarkMode={isDarkMode} />
-           <Footer isDarkMode={isDarkMode} />
+      <Qualification isDarkMode={isDarkMode} />
+      <Contact isDarkMode={isDarkMode} />
+      <Footer isDarkMode={isDarkMode} />
     </div>
   );
 }
