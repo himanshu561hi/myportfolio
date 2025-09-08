@@ -7,8 +7,8 @@ import { FaGraduationCap, FaBriefcase, FaCode } from 'react-icons/fa';
 function About({ isDarkMode }) {
   // const sectionBg = isDarkMode ? "bg-gray-800" : "bg-white";
 
-  // const sectionBg = isDarkMode ? "bg-gradient-to-r from-gray-950 to-gray-950" : "bg-gradient-to-r from-indigo-50 to-purple-100";
-  const sectionBg = isDarkMode ? "bg-transparent" : "bg-transparent"; 
+  const sectionBg = isDarkMode ? "bg-gradient-to-r from-gray-950 to-gray-950" : "bg-gradient-to-r from-indigo-50 to-purple-100";
+  
 
 
   const headingColor = isDarkMode ? "text-white" : "text-gray-900";

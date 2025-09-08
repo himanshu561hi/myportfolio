@@ -4,8 +4,8 @@ import resume from '../assets/resume.pdf';
 import { FaLaptopCode, FaMobileAlt, FaChartBar } from 'react-icons/fa';
 
 function HeroSection({ isDarkMode }) {
-  // const sectionBg = isDarkMode ? "bg-gradient-to-r from-gray-950 to-gray-950" : "bg-gradient-to-r from-indigo-50 to-purple-100";
-  const sectionBg = isDarkMode ? "bg-transparent" : "bg-transparent"; 
+  const sectionBg = isDarkMode ? "bg-gradient-to-r from-gray-950 to-gray-950" : "bg-gradient-to-r from-indigo-50 to-purple-100";
+
 
   const textColor = isDarkMode ? "text-gray-200" : "text-gray-800";
   const headingColor = isDarkMode ? "text-white" : "text-gray-900";

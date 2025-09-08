@@ -30,7 +30,7 @@ function App() {
 
   return (
     <div className="bg-white dark:bg-gray-950 transition-colors duration-300 min-h-screen text-gray-800 dark:text-white">
-      <div className="relative z-10">
+      <div className="relative z-0">
       <Navbar isDarkMode={isDarkMode} toggleTheme={toggleTheme} />
       <HeroSection isDarkMode={isDarkMode} />
       <About isDarkMode={isDarkMode} /> 
