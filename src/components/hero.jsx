@@ -30,7 +30,7 @@ function HeroSection({ isDarkMode }) {
       <div className="container mx-auto relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center px-4 md:px-12">
         {/* Left Side: Text, Buttons, Stats */}
         <div className="flex flex-col items-start text-left">
-          <h1 className={`text-5xl lg:text-6xl font-extrabold leading-tight ${headingColor} mb-6`}>
+          <h1 className={`text-5xl lg:text-5xl font-extrabold leading-tight ${headingColor} mb-6`}>
             Building <span className={spanColor}>The Future</span> With 
             Code, Creativity 
             and Technology.
