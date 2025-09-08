@@ -84,7 +84,7 @@ function Navbar({ isDarkMode, toggleTheme }) {
       
       {/* Mobile Menu (Sliding from top) */}
       <div className={`md:hidden absolute top-0 left-0 w-full h-screen ${isMenuOpen ? 'block' : 'hidden'} ${isDarkMode ? 'bg-gray-950/90' : 'bg-white/90'} backdrop-blur-lg z-40 transition-all duration-300 ease-in-out`}>
-        <div className="flex justify-between items-center p-4">
+        <div className="flex justify-between items-center p-4 border-b border-gray-700">
           <div className="flex items-center space-x-2">
             <div className={`w-8 h-8 rounded-full ${isDarkMode ? 'bg-teal-500' : 'bg-indigo-500'} flex items-center justify-center text-white font-bold`}>H</div>
             <span className={`text-xl font-bold ${brandColor}`}>Himanshu Gupta</span>
