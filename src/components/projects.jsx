@@ -154,7 +154,7 @@ const projectsData = [
       category: "AI Career Coach",
       title: "AI Career",
       description: "AI-powered career coach providing personalized guidance, resume support, and skill-based recommendations.",
-      link: "https://example.com/project1",
+      link: "https://mindstep.netlify.app/",
       githubLink: "https://github.com/your-profile/smooth-smoothies" 
     },
     {
