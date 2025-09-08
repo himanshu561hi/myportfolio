@@ -94,15 +94,15 @@ function Skills({ isDarkMode }) {
   const skillsData = [
     { name: "HTML5", icon: <FaHtml5 />, percentage: "90%" },
     { name: "CSS3", icon: <FaCss3Alt />, percentage: "85%" },
-    { name: "JavaScript", icon: <FaJs />, percentage: "80%" },
+    { name: "JavaScript", icon: <FaJs />, percentage: "55%" },
     { name: "React.js", icon: <FaReact />, percentage: "75%" },
     { name: "Tailwind CSS", icon: <SiTailwindcss />, percentage: "80%" },
-    { name: "Express.js", icon: <SiExpress />, percentage: "70%" },
-    { name: "Node.js", icon: <FaNodeJs />, percentage: "70%" },
-    { name: "MongoDB", icon: <SiMongodb />, percentage: "82%" },
-    { name: "C++", icon: <FaCode />, percentage: "60%" },
-    { name: "Python", icon: <FaPython />, percentage: "70%" },
-    { name: "DSA (Basic)", icon: <IoLogoPwa />, percentage: "60%" },
+    { name: "Express.js", icon: <SiExpress />, percentage: "60%" },
+    { name: "Node.js", icon: <FaNodeJs />, percentage: "60%" },
+    { name: "MongoDB", icon: <SiMongodb />, percentage: "52%" },
+    { name: "C++", icon: <FaCode />, percentage: "40%" },
+    { name: "Python", icon: <FaPython />, percentage: "40%" },
+    { name: "DSA (Basic)", icon: <IoLogoPwa />, percentage: "5%" },
   ];
 
   return (

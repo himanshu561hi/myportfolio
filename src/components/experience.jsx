@@ -29,7 +29,7 @@ function Experience({ isDarkMode }) {
       id: 2,
       role: "Web Development Intern",
       company: "Codsoft",
-      duration: "Sep 2023 - Oct 2023",
+      duration: "Sep 2024 - Oct 2024",
       description: "Assisted in the development of front-end components and worked with RESTful APIs. Gained hands-on experience in modern web development practices.",
       icon: <FaBriefcase />,
       certificateUrl: "https://drive.google.com/file/d/1HVPXoHS7Yd6Ro8DxLESTj7iTTWxIxaQx/view?usp=sharing"

@@ -147,36 +147,35 @@ function Projects({ isDarkMode }) {
   const githubButtonBg = isDarkMode ? "bg-gray-700 hover:bg-gray-600" : "bg-gray-200 hover:bg-gray-300";
   const githubButtonTextColor = isDarkMode ? "text-white" : "text-gray-800";
 
-  const projectsData = [
+const projectsData = [
     {
       id: 1,
       image: projectImage1,
-      category: "Full-Stack Web App",
-      title: "Smooth Smoothies",
-      description: "A multi-column, flexbox-based page layout and hero image with a tinted overlay.",
+      category: "AI Career Coach",
+      title: "AI Career",
+      description: "AI-powered career coach providing personalized guidance, resume support, and skill-based recommendations.",
       link: "https://example.com/project1",
-      githubLink: "https://github.com/your-profile/smooth-smoothies"
+      githubLink: "https://github.com/your-profile/smooth-smoothies" 
     },
     {
       id: 2,
       image: projectImage2,
-      category: "E-commerce UI",
-      title: "Snazzy Fashion",
-      description: "A web page for a fashion retailer with a background video that plays in a continuous loop.",
-      link: "https://example.com/project2",
-      githubLink: "https://github.com/your-profile/snazzy-fashion"
+      category: "Editor's Portfolio",
+      title: "XZ001MEDIA",
+      description: "Portfolio of a skilled editor presenting professional editing, creative storytelling, and sharp attention to detail across multiple content formats.",
+      link: "https://xz001mediaz.netlify.app/",
+      githubLink: "https://github.com/himanshu561hi/portfolio_nishant"
     },
     {
       id: 3,
       image: projectImage3,
-      category: "Design System",
-      title: "Hero Block Gallery",
-      description: "A gallery of hero block elements with split-screen layouts and duotone images.",
-      link: "https://example.com/project3",
-      githubLink: "https://github.com/your-profile/hero-block-gallery"
+      category: "GYM Website",
+      title: "The GYM",
+      description: "A modern gym website offering fitness programs, training guidance, and membership details.",
+      link: "https://thegymdelhi.netlify.app/",
+      githubLink: "https://github.com/himanshu561hi/TheGYM" 
     }
   ];
-
   return (
     <section id="projects" className={`py-16 lg:py-24 ${sectionBg} transition-colors duration-300 relative z-10`}>
       <div className="container mx-auto px-4 md:px-8 text-center">
