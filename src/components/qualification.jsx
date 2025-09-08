@@ -4,7 +4,9 @@ import React from 'react';
 import { FaGraduationCap, FaCertificate } from 'react-icons/fa';
 
 function Qualification({ isDarkMode }) {
-  const sectionBg = isDarkMode ? "bg-gray-800" : "bg-white";
+  // const sectionBg = isDarkMode ? "bg-gray-800" : "bg-white";
+
+  const sectionBg = isDarkMode ? "bg-gradient-to-r from-gray-950 to-gray-950" : "bg-gradient-to-r from-indigo-50 to-purple-100";
   const headingColor = isDarkMode ? "text-white" : "text-gray-900";
   const subHeadingColor = isDarkMode ? "text-cyan-400" : "text-indigo-600";
   const cardBg = isDarkMode ? "bg-gray-700" : "bg-gray-100";
@@ -44,7 +46,7 @@ function Qualification({ isDarkMode }) {
 
   return (
     <section id="qualification" className={`py-16 lg:py-24 flex items-center ${sectionBg} transition-colors duration-300`}>
-      <div className="container mx-auto px-4 md:px-12 text-center">
+      <div className="container mx-auto px-8 md:px-4 text-center">
         <span className={`text-xl font-semibold ${subHeadingColor}`}>My Education</span>
         <h2 className={`text-3xl lg:text-5xl font-extrabold ${headingColor} mb-16`}>
           Education & Certifications

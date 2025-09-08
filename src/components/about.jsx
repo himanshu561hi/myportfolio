@@ -5,7 +5,10 @@ import aboutImage from '../assets/about.png'; // Import your profile picture
 import { FaGraduationCap, FaBriefcase, FaCode } from 'react-icons/fa';
 
 function About({ isDarkMode }) {
-  const sectionBg = isDarkMode ? "bg-gray-800" : "bg-white";
+  // const sectionBg = isDarkMode ? "bg-gray-800" : "bg-white";
+
+  // const sectionBg = isDarkMode ? "bg-gradient-to-r from-gray-950 to-gray-950" : "bg-gradient-to-r from-indigo-50 to-purple-100";
+  const sectionBg = isDarkMode ? "bg-transparent" : "bg-transparent"; 
 
 
   const headingColor = isDarkMode ? "text-white" : "text-gray-900";
@@ -16,7 +19,7 @@ function About({ isDarkMode }) {
   
   return (
     <section id="about" className={`min-h-[auto] flex items-center py-16 lg:py-24 ${sectionBg} transition-colors duration-300`}>
-      <div className="container mx-auto px-6 md:px-4 grid grid-cols-1 lg:grid-cols-2 gap-35 items-center">
+      <div className="container mx-auto px-8 md:px-4 grid grid-cols-1 lg:grid-cols-2 gap-35 items-center">
         {/* Left Side: Image & Stats */}
         {/* <div className="flex justify-center lg:justify-center mb-12 lg:mb-0">
           <div className="relative w-80 h-80 md:w-96 md:h-96 rounded-full overflow-hidden shadow-2xl border-4 border-white dark:border-gray-700">

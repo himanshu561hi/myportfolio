@@ -5,7 +5,9 @@ import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaHandshake, FaDownload } from 're
 import resume from '../assets/resume.pdf';
 
 function Contact({ isDarkMode }) {
-  const sectionBg = isDarkMode ? "bg-gradient-to-br from-gray-950 to-gray-900" : "bg-gradient-to-br from-indigo-50 to-purple-100";
+  // const sectionBg = isDarkMode ? "bg-gradient-to-br from-gray-950 to-gray-900" : "bg-gradient-to-br from-indigo-50 to-purple-100";
+
+  const sectionBg = isDarkMode ? "bg-gradient-to-r from-gray-950 to-gray-950" : "bg-gradient-to-r from-indigo-50 to-purple-100";
   const headingColor = isDarkMode ? "text-white" : "text-gray-900";
   const paraColor = isDarkMode ? "text-gray-400" : "text-gray-600";
   const cardBg = isDarkMode ? "bg-gray-800/60 backdrop-blur-md" : "bg-white/60 backdrop-blur-md";
@@ -17,7 +19,7 @@ function Contact({ isDarkMode }) {
   
   return (
     <section id="contact" className={`min-h-screen py-16 lg:py-24 flex items-center text-center ${sectionBg} transition-colors duration-300`}>
-      <div className="container mx-auto px-4 md:px-12">
+      <div className="container mx-auto px-8 md:px-4">
         <h2 className={`text-3xl lg:text-5xl font-extrabold ${headingColor} mb-4`}>
           Let's Work Together!
         </h2>

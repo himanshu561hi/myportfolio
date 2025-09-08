@@ -4,7 +4,9 @@ import { SiTailwindcss, SiMongodb, SiExpress } from 'react-icons/si';
 import { IoLogoPwa } from "react-icons/io5";
 
 function Skills({ isDarkMode }) {
-  const sectionBg = isDarkMode ? "bg-gray-950" : "bg-gray-100";
+  // const sectionBg = isDarkMode ? "bg-gray-950" : "bg-gray-100";
+
+  const sectionBg = isDarkMode ? "bg-gradient-to-r from-gray-950 to-gray-950" : "bg-gradient-to-r from-indigo-50 to-purple-100";
   const headingColor = isDarkMode ? "text-white" : "text-gray-900";
   const subHeadingColor = isDarkMode ? "text-gray-400" : "text-gray-600";
   const cardBg = isDarkMode ? "bg-gray-800/60 backdrop-blur-md" : "bg-white/60 backdrop-blur-md";
@@ -31,7 +33,7 @@ function Skills({ isDarkMode }) {
 
   return (
     <section id="skills" className={`py-16 lg:py-24 ${sectionBg} transition-colors duration-300`}>
-      <div className="container mx-auto px-4 md:px-12 text-center">
+      <div className="container mx-auto px-8 md:px-4 text-center">
         <h2 className={`text-3xl lg:text-5xl font-extrabold ${headingColor} mb-4`}>
           Skills & Expertise
         </h2>

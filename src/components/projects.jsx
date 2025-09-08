@@ -135,7 +135,9 @@ import projectImage3 from '../assets/project3.png';
 import { FaGithub } from 'react-icons/fa';
 
 function Projects({ isDarkMode }) {
-  const sectionBg = isDarkMode ? "bg-gray-900/80 backdrop-blur-sm" : "bg-gray-100/80 backdrop-blur-sm";
+  // const sectionBg = isDarkMode ? "bg-gray-900/80 backdrop-blur-sm" : "bg-gray-100/80 backdrop-blur-sm";
+
+  const sectionBg = isDarkMode ? "bg-gradient-to-r from-gray-950 to-gray-950" : "bg-gradient-to-r from-indigo-50 to-purple-100";
   const headingColor = isDarkMode ? "text-white" : "text-gray-900";
   const subHeadingColor = isDarkMode ? "text-gray-400" : "text-gray-600";
   const linkColor = isDarkMode ? "text-teal-400 hover:text-teal-300" : "text-purple-600 hover:text-purple-700";
@@ -178,7 +180,7 @@ const projectsData = [
   ];
   return (
     <section id="projects" className={`py-16 lg:py-24 ${sectionBg} transition-colors duration-300 relative z-10`}>
-      <div className="container mx-auto px-4 md:px-8 text-center">
+      <div className="container mx-auto px-8 md:px-4 text-center">
         <h2 className={`text-3xl lg:text-5xl font-extrabold ${headingColor} mb-4`}>Projects</h2>
         <p className={`text-lg ${subHeadingColor} mb-12 max-w-3xl mx-auto`}>
           Below you can see some examples of my recent work. Check out my complete{' '}

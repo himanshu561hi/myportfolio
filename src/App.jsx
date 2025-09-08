@@ -7,7 +7,7 @@ import Skills from './components/skills';
 import Experience from './components/experience';
 import Qualification from './components/qualification';
 import Contact from './components/contact'; 
-import Footer from './components/footer'; 
+import Footer from './components/footer';
 
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(() => {
@@ -30,6 +30,7 @@ function App() {
 
   return (
     <div className="bg-white dark:bg-gray-950 transition-colors duration-300 min-h-screen text-gray-800 dark:text-white">
+      <div className="relative z-10">
       <Navbar isDarkMode={isDarkMode} toggleTheme={toggleTheme} />
       <HeroSection isDarkMode={isDarkMode} />
       <About isDarkMode={isDarkMode} /> 
@@ -39,8 +40,11 @@ function App() {
       <Qualification isDarkMode={isDarkMode} />
       <Contact isDarkMode={isDarkMode} />
       <Footer isDarkMode={isDarkMode} />
+      </div>
     </div>
   );
 }
 
 export default App;
+
+
