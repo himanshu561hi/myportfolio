@@ -7,12 +7,12 @@ function Navbar({ isDarkMode, toggleTheme }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navLinks = [
-    { name: 'Home', href: 'hero' },
+    // { name: 'Home', href: 'hero' },
     // { name: 'About', href: 'about' },
     { name: 'Projects', href: 'projects' },
     // { name: 'Skills', href: 'skills' },
     { name: 'Experience', href: 'experience' },
-    // { name: 'Qualification', href: 'qualification' },
+    { name: 'Qualification', href: 'qualification' },
     { name: 'Contact', href: 'contact' },
   ];
 
@@ -92,14 +92,14 @@ function Navbar({ isDarkMode, toggleTheme }) {
           <button onClick={toggleMenu} className={`text-2xl ${brandColor}`}><FaTimes /></button>
         </div>
         
-        <ul className="flex flex-col items-center justify-center h-full text-2xl font-bold space-y-8">
+        <ul className="flex flex-col items-center mt-20 h-full text-2xl font-bold space-y-8">
           {navLinks.map((link) => (
             <li key={link.name}>
               <a
                 href={`#${link.href}`}
                 onClick={() => {
                   setActiveLink(link.name);
-                  setIsMenuOpen(false); // लिंक पर क्लिक करने पर मेनू बंद करें
+                  setIsMenuOpen(false); 
                 }}
                 className={`transition-colors duration-300 transform hover:scale-105 ${
                   activeLink.toLowerCase() === link.name.toLowerCase() ? activeLinkColor : hoverLinkColor

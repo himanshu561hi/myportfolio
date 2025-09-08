@@ -1,17 +1,145 @@
-import React from 'react';
+// import React from 'react';
 
+// import projectImage1 from '../assets/project1.png';
+// import projectImage2 from '../assets/project2.png';
+// import projectImage3 from '../assets/project3.png';
+// import { FaGithub } from 'react-icons/fa'; 
+
+// function Projects({ isDarkMode }) {
+//   const sectionBg = isDarkMode ? "bg-gray-900" : "bg-gray-100";
+//   const headingColor = isDarkMode ? "text-white" : "text-gray-900";
+//   const subHeadingColor = isDarkMode ? "text-gray-400" : "text-gray-600";
+//   const linkColor = isDarkMode ? "text-teal-400 hover:text-teal-300" : "text-purple-600 hover:text-purple-700";
+//   const cardBg = isDarkMode ? "bg-gray-800" : "bg-white";
+
+//   const cardTitleColor = isDarkMode ? "text-white" : "text-gray-900";
+//   const cardDescriptionColor = isDarkMode ? "text-gray-400" : "text-gray-600";
+//   const buttonBg = isDarkMode ? "bg-gray-700 hover:bg-gray-600" : "bg-gray-900 hover:bg-gray-800";
+//   const buttonTextColor = "text-white";
+//   const githubButtonBg = isDarkMode ? "bg-gray-700 hover:bg-gray-600" : "bg-gray-200 hover:bg-gray-300";
+//   const githubButtonTextColor = isDarkMode ? "text-white" : "text-gray-800";
+
+//   const projectsData = [
+//     {
+//       id: 1,
+//       image: projectImage1,
+//       category: "AI Career Coach",
+//       title: "AI Career",
+//       description: "AI-powered career coach providing personalized guidance, resume support, and skill-based recommendations.",
+//       link: "https://example.com/project1",
+//       githubLink: "https://github.com/your-profile/smooth-smoothies" 
+//     },
+//     {
+//       id: 2,
+//       image: projectImage2,
+//       category: "Editor's Portfolio",
+//       title: "XZ001MEDIA",
+//       description: "Portfolio of a skilled editor presenting professional editing, creative storytelling, and sharp attention to detail across multiple content formats.",
+//       link: "https://xz001mediaz.netlify.app/",
+//       githubLink: "https://github.com/himanshu561hi/portfolio_nishant"
+//     },
+//     {
+//       id: 3,
+//       image: projectImage3,
+//       category: "GYM Website",
+//       title: "The GYM",
+//       description: "A modern gym website offering fitness programs, training guidance, and membership details.",
+//       link: "https://thegymdelhi.netlify.app/",
+//       githubLink: "https://github.com/himanshu561hi/TheGYM" 
+//     }
+//   ];
+
+//   return (
+//     <section id="projects" className={`py-16 lg:py-24 ${sectionBg} transition-colors duration-300`}>
+//       <div className="container mx-auto px-6 md:px-4 text-center">
+//         <h2 className={`text-5xl font-extrabold ${headingColor} mb-4`}>Projects</h2>
+//         <p className={`text-lg ${subHeadingColor} mb-12 max-w-3xl mx-auto`}>
+//           Below you can see some examples of my recent work. Check out my complete{' '}
+//           <a href="#" className={`font-semibold ${linkColor}`}>
+//             portfolio
+//           </a>
+//           . Have a project you would like to discuss?{' '}
+//           <a href="#" className={`font-semibold ${linkColor}`}>
+//             Let's make something great together!
+//           </a>
+//         </p>
+
+//         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+//           {projectsData.map((project) => (
+//             <div
+//               key={project.id}
+//               className={`rounded-xl ${cardBg} shadow-lg overflow-hidden transition-all duration-300 transform hover:scale-105 hover:shadow-2xl`}
+//             >
+//               <img
+//                 src={project.image}
+//                 alt={project.title}
+//                 className="w-full h-56 object-cover"
+//               />
+//               <div className="p-6 text-left">
+//                 <p className={`text-sm ${subHeadingColor} mb-2`}>{project.category}</p>
+//                 <h3 className={`text-xl font-bold ${cardTitleColor} mb-2`}>{project.title}</h3>
+//                 <p className={`text-base ${cardDescriptionColor} mb-6`}>{project.description}</p>
+                
+//                 <div className="flex gap-4">
+                  
+//                   <a
+//                     href={project.githubLink}
+//                     target="_blank"
+//                     rel="noopener noreferrer"
+//                     className={`inline-flex items-center px-4 py-3 rounded-full ${githubButtonBg} ${githubButtonTextColor} font-semibold text-sm transition-colors duration-300`}
+//                   >
+//                     <FaGithub className="text-xl" />
+//                   </a>
+                  
+                  
+//                   <a
+//                     href={project.link}
+//                     target="_blank"
+//                     rel="noopener noreferrer"
+//                     className={`inline-flex items-center px-6 py-3 rounded-full ${buttonBg} ${buttonTextColor} font-semibold text-sm transition-colors duration-300`}
+//                   >
+//                     View project
+//                     <span className="ml-2 text-xl">&rarr;</span>
+//                   </a>
+                  
+                  
+//                 </div>
+//               </div>
+//             </div>
+//           ))}
+
+//         </div>
+//         {/* "View all" link now at the bottom */}
+//         <div className="text-center mt-12">
+//           <a href="https://github.com/himanshu561hi" className={`font-semibold ${linkColor} text-lg`}>
+//             View all
+//             <span className="ml-2 text-xl">&rarr;</span>
+//           </a>
+//         </div>
+//       </div>
+//     </section>
+//   );
+// }
+
+// export default Projects;
+
+
+
+
+// src/components/Projects.jsx
+
+import React from 'react';
 import projectImage1 from '../assets/project1.png';
 import projectImage2 from '../assets/project2.png';
 import projectImage3 from '../assets/project3.png';
-import { FaGithub } from 'react-icons/fa'; 
+import { FaGithub } from 'react-icons/fa';
 
 function Projects({ isDarkMode }) {
-  const sectionBg = isDarkMode ? "bg-gray-900" : "bg-gray-100";
+  const sectionBg = isDarkMode ? "bg-gray-900/80 backdrop-blur-sm" : "bg-gray-100/80 backdrop-blur-sm";
   const headingColor = isDarkMode ? "text-white" : "text-gray-900";
   const subHeadingColor = isDarkMode ? "text-gray-400" : "text-gray-600";
   const linkColor = isDarkMode ? "text-teal-400 hover:text-teal-300" : "text-purple-600 hover:text-purple-700";
-  const cardBg = isDarkMode ? "bg-gray-800" : "bg-white";
-
+  const cardBg = isDarkMode ? "bg-gray-800/80 backdrop-blur-sm" : "bg-white/80 backdrop-blur-sm";
   const cardTitleColor = isDarkMode ? "text-white" : "text-gray-900";
   const cardDescriptionColor = isDarkMode ? "text-gray-400" : "text-gray-600";
   const buttonBg = isDarkMode ? "bg-gray-700 hover:bg-gray-600" : "bg-gray-900 hover:bg-gray-800";
@@ -23,35 +151,35 @@ function Projects({ isDarkMode }) {
     {
       id: 1,
       image: projectImage1,
-      category: "AI Career Coach",
-      title: "AI Career",
-      description: "AI-powered career coach providing personalized guidance, resume support, and skill-based recommendations.",
+      category: "Full-Stack Web App",
+      title: "Smooth Smoothies",
+      description: "A multi-column, flexbox-based page layout and hero image with a tinted overlay.",
       link: "https://example.com/project1",
-      githubLink: "https://github.com/your-profile/smooth-smoothies" 
+      githubLink: "https://github.com/your-profile/smooth-smoothies"
     },
     {
       id: 2,
       image: projectImage2,
-      category: "Editor's Portfolio",
-      title: "XZ001MEDIA",
-      description: "Portfolio of a skilled editor presenting professional editing, creative storytelling, and sharp attention to detail across multiple content formats.",
-      link: "https://xz001mediaz.netlify.app/",
-      githubLink: "https://github.com/himanshu561hi/portfolio_nishant"
+      category: "E-commerce UI",
+      title: "Snazzy Fashion",
+      description: "A web page for a fashion retailer with a background video that plays in a continuous loop.",
+      link: "https://example.com/project2",
+      githubLink: "https://github.com/your-profile/snazzy-fashion"
     },
     {
       id: 3,
       image: projectImage3,
-      category: "GYM Website",
-      title: "The GYM",
-      description: "A modern gym website offering fitness programs, training guidance, and membership details.",
-      link: "https://thegymdelhi.netlify.app/",
-      githubLink: "https://github.com/himanshu561hi/TheGYM" 
+      category: "Design System",
+      title: "Hero Block Gallery",
+      description: "A gallery of hero block elements with split-screen layouts and duotone images.",
+      link: "https://example.com/project3",
+      githubLink: "https://github.com/your-profile/hero-block-gallery"
     }
   ];
 
   return (
-    <section id="projects" className={`py-16 lg:py-24 ${sectionBg} transition-colors duration-300`}>
-      <div className="container mx-auto px-4 md:px-12 text-center">
+    <section id="projects" className={`py-16 lg:py-24 ${sectionBg} transition-colors duration-300 relative z-10`}>
+      <div className="container mx-auto px-4 md:px-8 text-center">
         <h2 className={`text-5xl font-extrabold ${headingColor} mb-4`}>Projects</h2>
         <p className={`text-lg ${subHeadingColor} mb-12 max-w-3xl mx-auto`}>
           Below you can see some examples of my recent work. Check out my complete{' '}
@@ -64,11 +192,12 @@ function Projects({ isDarkMode }) {
           </a>
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+        {/* --- मुख्य कंटेनर में बदलाव --- */}
+        <div className="flex overflow-x-scroll snap-x space-x-6 pb-4 md:grid md:grid-cols-2 md:gap-8 lg:grid-cols-3 lg:gap-16 md:overflow-visible">
           {projectsData.map((project) => (
             <div
               key={project.id}
-              className={`rounded-xl ${cardBg} shadow-lg overflow-hidden transition-all duration-300 transform hover:scale-105 hover:shadow-2xl`}
+              className={`w-80 flex-shrink-0 snap-center rounded-xl ${cardBg} shadow-lg overflow-hidden transition-all duration-300 transform hover:scale-105 hover:shadow-2xl`}
             >
               <img
                 src={project.image}
@@ -81,7 +210,6 @@ function Projects({ isDarkMode }) {
                 <p className={`text-base ${cardDescriptionColor} mb-6`}>{project.description}</p>
                 
                 <div className="flex gap-4">
-                  
                   <a
                     href={project.githubLink}
                     target="_blank"
@@ -90,8 +218,6 @@ function Projects({ isDarkMode }) {
                   >
                     <FaGithub className="text-xl" />
                   </a>
-                  
-                  
                   <a
                     href={project.link}
                     target="_blank"
@@ -101,18 +227,16 @@ function Projects({ isDarkMode }) {
                     View project
                     <span className="ml-2 text-xl">&rarr;</span>
                   </a>
-                  
-                  
                 </div>
               </div>
             </div>
           ))}
-
         </div>
-        {/* "View all" link now at the bottom */}
+        {/* --- बदलाव यहाँ समाप्त होता है --- */}
+        
         <div className="text-center mt-12">
-          <a href="https://github.com/himanshu561hi" className={`font-semibold ${linkColor} text-lg`}>
-            View all
+          <a href="#" className={`font-semibold ${linkColor} text-lg`}>
+            View all 
             <span className="ml-2 text-xl">&rarr;</span>
           </a>
         </div>

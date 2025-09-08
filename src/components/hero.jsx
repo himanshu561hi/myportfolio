@@ -25,12 +25,12 @@ function HeroSection({ isDarkMode }) {
   const skills = ["React", "Node.js", "JavaScript", "Python", "MongoDB"];
 
   return (
-    <section className={`relative min-h-screen flex items-center justify-center pt-24 pb-16 lg:pt-32 lg:pb-24 ${sectionBg} ${textColor} transition-colors duration-300 overflow-hidden`}>
+    <section className={`relative min-h-screen flex items-center justify-center pt-30 pb-16 lg:pt-26 lg:pb-24 ${sectionBg} ${textColor} transition-colors duration-300 overflow-hidden`}>
       
-      <div className="container mx-auto relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center px-4 md:px-12">
+      <div className="container mx-auto relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center px-8 md:px-4">
         {/* Left Side: Text, Buttons, Stats */}
         <div className="flex flex-col items-start text-left">
-          <h1 className={`text-5xl lg:text-5xl font-extrabold leading-tight ${headingColor} mb-6`}>
+          <h1 className={`text-4xl lg:text-5xl font-extrabold leading-tight ${headingColor} mb-6`}>
             Building <span className={spanColor}>The Future</span> With 
             Code, Creativity 
             and Technology.
@@ -63,9 +63,9 @@ function HeroSection({ isDarkMode }) {
         </div>
 
         {/* Right Side: Image and Surrounding Icons */}
-        <div className="relative flex justify-center items-center h-full min-h-[400px] lg:min-h-[auto]">
+        <div className="relative flex justify-center items-center min-h-[auto] lg:min-h-[auto]">
           {/* Main Image in circular frame */}
-          <div className={`relative w-96 h-96 rounded-full flex items-center justify-center ${imageBg} shadow-xl overflow-hidden border-4 ${imageBorder}`}>
+          <div className={`relative w-75 h-75 lg:w-96 lg:h-96 rounded-full flex items-center justify-center ${imageBg} shadow-xl overflow-hidden border-4 ${imageBorder}`}>
             <div className={`absolute inset-0 rounded-full border-8 ${imageSpinColor} animate-spin-slow`} style={{ animationDuration: '20s', borderTopColor: 'transparent', borderLeftColor: 'transparent' }}></div>
             <img
               src={profilePic}
@@ -78,7 +78,7 @@ function HeroSection({ isDarkMode }) {
           <div className={`absolute top-1/4 left-0 p-3 ${iconBg} rounded-full shadow-md ${iconColor} text-2xl`}>
             <FaLaptopCode />
           </div>
-          <div className={`absolute top-1/3 right-0 p-3 ${iconBg} rounded-full shadow-md ${iconColor} text-2xl`}>
+          <div className={`absolute top-1/33 right-0 p-3 ${iconBg} rounded-full shadow-md ${iconColor} text-2xl`}>
             <FaMobileAlt />
           </div>
           <div className={`absolute bottom-1/4 left-1/4 p-3 ${iconBg} rounded-full shadow-md ${iconColor} text-2xl`}>

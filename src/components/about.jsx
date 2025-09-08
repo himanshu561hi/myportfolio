@@ -15,10 +15,10 @@ function About({ isDarkMode }) {
   const iconColor = isDarkMode ? "text-cyan-400" : "text-indigo-600";
   
   return (
-    <section id="about" className={`min-h-screen flex items-center py-16 lg:py-24 ${sectionBg} transition-colors duration-300`}>
-      <div className="container mx-auto px-4 md:px-12 grid grid-cols-1 lg:grid-cols-2 gap-35 items-center">
+    <section id="about" className={`min-h-[auto] flex items-center py-16 lg:py-24 ${sectionBg} transition-colors duration-300`}>
+      <div className="container mx-auto px-6 md:px-4 grid grid-cols-1 lg:grid-cols-2 gap-35 items-center">
         {/* Left Side: Image & Stats */}
-        <div className="flex justify-center lg:justify-center mb-12 lg:mb-0">
+        {/* <div className="flex justify-center lg:justify-center mb-12 lg:mb-0">
           <div className="relative w-80 h-80 md:w-96 md:h-96 rounded-full overflow-hidden shadow-2xl border-4 border-white dark:border-gray-700">
             <img 
               src={aboutImage}
@@ -26,7 +26,16 @@ function About({ isDarkMode }) {
               className="w-full h-full object-cover"
             />
           </div>
-        </div>
+        </div> */}
+<div className="hidden lg:flex justify-center lg:justify-center mb-12 lg:mb-0">
+  <div className="relative w-80 h-80 md:w-96 md:h-96 rounded-full overflow-hidden shadow-2xl border-4 border-white dark:border-gray-700">
+    <img
+      src={aboutImage}
+      alt="Himanshu Gupta"
+      className="w-full h-full object-cover"
+    />
+  </div>
+</div>
 
         {/* Right Side: Content */}
         <div className="flex flex-col items-start text-left">
