@@ -119,7 +119,7 @@ function Footer({ isDarkMode }) {
       <div className="container mx-auto px-4 md:px-12 grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
         {/* Left Section: Portfolio Title and Tagline */}
         <div className="flex flex-col items-center md:items-start">
-          <h2 className={`text-4xl lg:text-5xl font-extrabold leading-tight ${headingColor} mb-2`}>
+          <h2 className={`text-3xl lg:text-5xl font-extrabold leading-tight ${headingColor} mb-2`}>
             Himanshu's <br />
             <span className={accentColor}>Portfolio</span>
           </h2>

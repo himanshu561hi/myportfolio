@@ -46,7 +46,7 @@ function Qualification({ isDarkMode }) {
     <section id="qualification" className={`py-16 lg:py-24 flex items-center ${sectionBg} transition-colors duration-300`}>
       <div className="container mx-auto px-4 md:px-12 text-center">
         <span className={`text-xl font-semibold ${subHeadingColor}`}>My Education</span>
-        <h2 className={`text-4xl lg:text-5xl font-extrabold ${headingColor} mb-16`}>
+        <h2 className={`text-3xl lg:text-5xl font-extrabold ${headingColor} mb-16`}>
           Education & Certifications
         </h2>
 

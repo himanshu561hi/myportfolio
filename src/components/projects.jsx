@@ -180,7 +180,7 @@ function Projects({ isDarkMode }) {
   return (
     <section id="projects" className={`py-16 lg:py-24 ${sectionBg} transition-colors duration-300 relative z-10`}>
       <div className="container mx-auto px-4 md:px-8 text-center">
-        <h2 className={`text-5xl font-extrabold ${headingColor} mb-4`}>Projects</h2>
+        <h2 className={`text-3xl lg:text-5xl font-extrabold ${headingColor} mb-4`}>Projects</h2>
         <p className={`text-lg ${subHeadingColor} mb-12 max-w-3xl mx-auto`}>
           Below you can see some examples of my recent work. Check out my complete{' '}
           <a href="#" className={`font-semibold ${linkColor}`}>
@@ -192,7 +192,6 @@ function Projects({ isDarkMode }) {
           </a>
         </p>
 
-        {/* --- मुख्य कंटेनर में बदलाव --- */}
         <div className="flex overflow-x-scroll snap-x space-x-6 pb-4 md:grid md:grid-cols-2 md:gap-8 lg:grid-cols-3 lg:gap-16 md:overflow-visible">
           {projectsData.map((project) => (
             <div

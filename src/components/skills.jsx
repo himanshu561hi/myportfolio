@@ -108,7 +108,7 @@ function Skills({ isDarkMode }) {
   return (
     <section id="skills" className={`py-16 lg:py-24 ${sectionBg} transition-colors duration-300`}>
       <div className="container mx-auto px-4 md:px-12 text-center">
-        <h2 className={`text-5xl font-extrabold ${headingColor} mb-4`}>
+        <h2 className={`text-3xl lg:text-5xl font-extrabold ${headingColor} mb-4`}>
           Skills & Expertise
         </h2>
         <p className={`text-lg max-w-3xl mx-auto ${subHeadingColor} mb-12`}>

@@ -18,7 +18,7 @@ function Contact({ isDarkMode }) {
   return (
     <section id="contact" className={`min-h-screen py-16 lg:py-24 flex items-center text-center ${sectionBg} transition-colors duration-300`}>
       <div className="container mx-auto px-4 md:px-12">
-        <h2 className={`text-5xl lg:text-6xl font-extrabold ${headingColor} mb-4`}>
+        <h2 className={`text-3xl lg:text-5xl font-extrabold ${headingColor} mb-4`}>
           Let's Work Together!
         </h2>
         <p className={`text-lg max-w-3xl mx-auto ${paraColor} mb-12`}>
