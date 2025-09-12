@@ -4,7 +4,7 @@ import { FaHeart, FaWhatsapp, FaGithub, FaLinkedinIn, FaInstagram, FaTelegramPla
 import { SiGmail } from 'react-icons/si';
 
 function Footer({ isDarkMode }) {
-  const footerBg = isDarkMode ? "bg-black" : "bg-white";
+  const footerBg = isDarkMode ? "bg-gray-900" : "bg-gray-100";
   const textColor = isDarkMode ? "text-gray-400" : "text-gray-600";
   const headingColor = isDarkMode ? "text-white" : "text-gray-900";
   const accentColor = isDarkMode ? "text-teal-400" : "text-indigo-600"; // Accent color for names/highlights

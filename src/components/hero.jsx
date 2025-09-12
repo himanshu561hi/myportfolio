@@ -124,7 +124,7 @@ function HeroSection({ isDarkMode }) {
   const skills = ["React", "Node.js", "JavaScript", "Python", "MongoDB"];
 
   return (
-    <section className={`relative min-h-screen flex items-center justify-center pt-32 pb-16 lg:pt-28 lg:pb-24 ${sectionBg} ${textColor} transition-all duration-500 overflow-hidden`}>
+    <section className={`relative  flex items-center justify-center pt-32 pb-16 lg:pt-28 lg:pb-24 ${sectionBg} ${textColor} transition-all duration-500 overflow-hidden`}>
       
       {/* Animated Background Particles */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -172,7 +172,7 @@ function HeroSection({ isDarkMode }) {
       </div>
 
       {/* Main Content */}
-      <div className="container mx-auto relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-16 xl:gap-24 items-center px-6 md:px-8 lg:px-12">
+      <div className="container mx-auto relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-16 xl:gap-24 items-center px-6 md:px-8 lg:px-8">
         
         {/* Left Side: Text, Buttons, Stats */}
         <div className="flex flex-col items-start text-left space-y-8">
@@ -219,7 +219,7 @@ function HeroSection({ isDarkMode }) {
             {skills.map((skill, index) => (
               <span
                 key={skill}
-                className={`group flex items-center justify-center px-6 py-3 rounded-2xl ${tagBg} ${tagTextColor} font-semibold text-sm border border-gray-300/20 hover:border-gray-300/40 hover:scale-105 transition-all duration-300 cursor-default shadow-lg hover:shadow-xl`}
+                className={`group flex items-center justify-center px-6 py-3 rounded-2xl ${tagBg} ${tagTextColor} font-semibold text-sm border border-gray-300/20 hover:border-gray-300/40 hover:scale-103 transition-all duration-300 cursor-default shadow-lg hover:shadow-xl`}
                 style={{
                   animationDelay: `${index * 0.1}s`
                 }}
@@ -231,7 +231,7 @@ function HeroSection({ isDarkMode }) {
         </div>
 
         {/* Right Side: Enhanced Image and Floating Icons */}
-        <div className="relative flex justify-center items-center min-h-[500px] lg:min-h-[600px]">
+        <div className="relative flex justify-center items-center min-h-[300px] lg:min-h-[600px]">
           
           {/* Main Image Container with Enhanced Effects */}
           <div className={`absolute w-70 h-70 lg:w-[420px] lg:h-[420px] rounded-full flex items-center justify-center ${imageBg} shadow-2xl overflow-hidden border-4 ${imageBorder}`}>
@@ -266,17 +266,17 @@ function HeroSection({ isDarkMode }) {
           </div>
 
           {/* Enhanced Floating Icons with Better Positioning */}
-          <div className={`absolute -top-8 -left-8 p-4 ${iconBg} rounded-2xl shadow-xl ${iconColor} text-2xl transform hover:scale-110 hover:rotate-12 transition-all duration-300 cursor-pointer`}
+          <div className={`absolute -top-8 left-20 lg:top-20 lg:left-20 lg:z-10 p-4 ${iconBg} rounded-2xl shadow-xl ${iconColor} text-2xl transform hover:scale-110 hover:rotate-12 transition-all duration-300 cursor-pointer`}
                style={{ animation: 'float-icon-1 6s ease-in-out infinite' }}>
             <FaLaptopCode />
           </div>
           
-          <div className={`absolute -top-4 -right-12 p-4 ${iconBg} rounded-2xl shadow-xl ${iconColor} text-2xl transform hover:scale-110 hover:rotate-12 transition-all duration-300 cursor-pointer`}
+          <div className={`absolute top-14 right-6 z-10 lg:top-10 lg:right-0 lg:z-10 p-4 ${iconBg} rounded-2xl shadow-xl ${iconColor} text-2xl transform hover:scale-110 hover:rotate-12 transition-all duration-300 cursor-pointer`}
                style={{ animation: 'float-icon-2 8s ease-in-out infinite', animationDelay: '2s' }}>
             <FaMobileAlt />
           </div>
           
-          <div className={`absolute -bottom-8 -left-4 p-4 ${iconBg} rounded-2xl shadow-xl ${iconColor} text-2xl transform hover:scale-110 hover:rotate-12 transition-all duration-300 cursor-pointer`}
+          <div className={`absolute bottom-18 left-100 p-4 ${iconBg} rounded-2xl shadow-xl ${iconColor} text-2xl transform hover:scale-110 hover:rotate-12 transition-all duration-300 cursor-pointer`}
                style={{ animation: 'float-icon-3 7s ease-in-out infinite', animationDelay: '4s' }}>
             <FaChartBar />
           </div>
