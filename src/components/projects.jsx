@@ -36,7 +36,7 @@ const projectsData = [
       category: "Editor's Portfolio",
       title: "XZ001MEDIA",
       description: "Portfolio of a skilled editor presenting professional editing, creative storytelling, and sharp attention to detail across multiple content formats.",
-      link: "https://xz001mediaz.netlify.app/",
+      link: "https://xz001mediazz.netlify.app/",
       githubLink: "https://github.com/himanshu561hi/portfolio_nishant"
     },
     {
@@ -45,7 +45,7 @@ const projectsData = [
       category: "GYM Website",
       title: "The GYM",
       description: "A modern gym website offering fitness programs, training guidance, and membership details.",
-      link: "https://thegymdelhi.netlify.app/",
+      link: "https://thegym01.netlify.app/",
       githubLink: "https://github.com/himanshu561hi/TheGYM" 
     }
   ];
