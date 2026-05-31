@@ -157,16 +157,21 @@
 
 import React from 'react';
 import { FaGraduationCap, FaBriefcase } from 'react-icons/fa';
+import DecryptedText from './DecryptedText';
+import TiltCard from './TiltCard';
+import SectionParticles from './SectionParticles';
 
 function Experience({ isDarkMode }) {
-  const sectionBg = isDarkMode ? "bg-gradient-to-r from-gray-950 to-gray-950" : "bg-gradient-to-r from-indigo-50 to-purple-100";
+  const sectionBg = isDarkMode 
+    ? "bg-[#030014]" 
+    : "bg-indigo-50/10 backdrop-blur-sm";
+
   const headingColor = isDarkMode ? "text-white" : "text-gray-900";
   const subHeadingColor = isDarkMode ? "text-cyan-400" : "text-indigo-600";
-  const cardBg = isDarkMode ? "bg-gray-800" : "bg-gray-100";
+  const cardBg = isDarkMode ? "bg-[#0d0925] border border-purple-500/20 text-white" : "bg-white/60 backdrop-blur-md";
   const cardTextColor = isDarkMode ? "text-white" : "text-gray-800";
-  const textColor = isDarkMode ? "text-gray-400" : "text-gray-600";
-  const lineColor = isDarkMode ? "bg-gray-700" : "bg-gray-300";
-  const dotColor = isDarkMode ? "bg-teal-400" : "bg-indigo-600";
+  const textColor = isDarkMode ? "text-gray-300" : "text-gray-600";
+  const dotColor = isDarkMode ? "bg-teal-400 shadow-[0_0_12px_rgba(45,212,191,0.6)]" : "bg-indigo-600 shadow-[0_0_12px_rgba(99,102,241,0.6)]";
   const linkColor = isDarkMode ? "text-teal-300 hover:text-teal-200" : "text-indigo-600 hover:text-indigo-500";
   const iconColor = isDarkMode ? "text-white" : "text-white";
 
@@ -201,67 +206,93 @@ function Experience({ isDarkMode }) {
   ];
 
   return (
-    <section id="experience" className={`min-h-screen py-16 lg:py-24 flex items-center justify-center ${sectionBg} transition-colors duration-300`}>
-      <div className="container mx-auto px-8 md:px-4 text-center">
-        <span className={`text-xl font-semibold ${subHeadingColor}`}>My Journey</span>
-        <h2 className={`text-3xl lg:text-5xl font-extrabold ${headingColor} mb-16`}>
-          Work Experience & Professional History
-        </h2>
+    <section id="experience" className={`relative min-h-screen py-16 lg:py-24 flex items-center justify-center ${sectionBg} transition-colors duration-300 overflow-hidden z-10`}>
+      
+      {/* Canvas Rain Particle Overlay */}
+      <SectionParticles type="rain" isDarkMode={isDarkMode} />
+
+      <div className="container mx-auto px-8 md:px-4 text-center relative z-10 flex flex-col items-center">
+        <span className={`text-xl font-bold mb-3 block ${subHeadingColor} tracking-wider uppercase`}>My Journey</span>
+        
+        <div className="mb-16 flex flex-col items-center justify-center">
+          <DecryptedText 
+            text="Work Experience & Professional History" 
+            animateOn="view"
+            speed={40}
+            className={`text-3xl lg:text-5xl font-black tracking-tight ${headingColor}`}
+            encryptedClassName="text-purple-400 font-mono"
+          />
+          <div className={`w-32 h-1.5 rounded-full mt-4 ${isDarkMode ? 'bg-gradient-to-r from-teal-500 to-cyan-400' : 'bg-gradient-to-r from-purple-600 to-indigo-500'} scale-x-0 animate-[expand-width_1s_ease-out_forwards]`} />
+        </div>
 
         {/* Desktop Timeline */}
         <div className="hidden md:block relative w-full">
-          <div className={`absolute top-0 left-1/2 transform -translate-x-1/2 h-full w-1 ${lineColor}`}></div>
+          {/* Glowing vertical timeline line */}
+          <div className={`absolute top-0 left-1/2 transform -translate-x-1/2 h-full w-1 ${
+            isDarkMode 
+              ? 'bg-gradient-to-b from-teal-500 via-cyan-400 to-teal-500 shadow-[0_0_8px_rgba(45,212,191,0.4)]' 
+              : 'bg-gradient-to-b from-indigo-500 via-purple-400 to-indigo-500'
+          }`}></div>
+
           <div className="flex flex-col items-center">
             {experienceData.map((item, index) => (
               <div 
                 key={item.id} 
-                className={`flex w-full justify-between items-center mb-10 relative`}
+                className={`flex w-full justify-between items-center mb-12 relative`}
               >
                 {/* Left side content */}
                 {index % 2 === 0 ? (
                   <>
-                    <div className="w-5/12 p-6 rounded-xl text-right">
-                      <h3 className={`text-2xl font-bold ${cardTextColor}`}>{item.role}</h3>
-                      <p className={`text-md font-medium ${subHeadingColor} mb-2`}>{item.company}</p>
-                      <span className={`text-sm ${textColor} block mb-2`}>{item.duration}</span>
-                      <p className={`text-sm ${textColor} mb-4`}>{item.description}</p>
-                      {item.certificateUrl && (
-                        <a 
-                          href={item.certificateUrl} 
-                          target="_blank" 
-                          rel="noopener noreferrer" 
-                          className={`inline-flex items-center text-sm font-semibold ${linkColor}`}
-                        >
-                          View Certificate
-                        </a>
-                      )}
+                    <div className="w-5/12 text-right">
+                      <TiltCard isDarkMode={isDarkMode} intensity={8}>
+                        <div className={`p-6 rounded-2xl ${cardBg} border border-gray-300/10 shadow-lg text-right backdrop-blur-md`}>
+                          <h3 className={`text-2xl font-bold ${cardTextColor}`}>{item.role}</h3>
+                          <p className={`text-md font-semibold ${subHeadingColor} mb-2`}>{item.company}</p>
+                          <span className={`text-sm ${textColor} block mb-2`}>{item.duration}</span>
+                          <p className={`text-sm ${textColor} mb-4 leading-relaxed`}>{item.description}</p>
+                          {item.certificateUrl && (
+                            <a 
+                              href={item.certificateUrl} 
+                              target="_blank" 
+                              rel="noopener noreferrer" 
+                              className={`inline-flex items-center text-sm font-bold ${linkColor}`}
+                            >
+                              View Certificate
+                            </a>
+                          )}
+                        </div>
+                      </TiltCard>
                     </div>
-                    <div className={`absolute left-1/2 transform -translate-x-1/2 h-10 w-10 rounded-full ${dotColor} flex items-center justify-center`}>
-                      <span className={`${iconColor}`}>{item.icon}</span>
+                    <div className={`absolute left-1/2 transform -translate-x-1/2 h-12 w-12 rounded-full ${dotColor} flex items-center justify-center z-20`}>
+                      <span className={`${iconColor} text-lg`}>{item.icon}</span>
                     </div>
                     <div className="w-5/12"></div>
                   </>
                 ) : (
                   <>
                     <div className="w-5/12"></div>
-                    <div className={`absolute left-1/2 transform -translate-x-1/2 h-10 w-10 rounded-full ${dotColor} flex items-center justify-center`}>
-                      <span className={`${iconColor}`}>{item.icon}</span>
+                    <div className={`absolute left-1/2 transform -translate-x-1/2 h-12 w-12 rounded-full ${dotColor} flex items-center justify-center z-20`}>
+                      <span className={`${iconColor} text-lg`}>{item.icon}</span>
                     </div>
-                    <div className="w-5/12 p-6 rounded-xl text-left">
-                      <h3 className={`text-2xl font-bold ${cardTextColor}`}>{item.role}</h3>
-                      <p className={`text-md font-medium ${subHeadingColor} mb-2`}>{item.company}</p>
-                      <span className={`text-sm ${textColor} block mb-2`}>{item.duration}</span>
-                      <p className={`text-sm ${textColor} mb-4`}>{item.description}</p>
-                      {item.certificateUrl && (
-                        <a 
-                          href={item.certificateUrl} 
-                          target="_blank" 
-                          rel="noopener noreferrer" 
-                          className={`inline-flex items-center text-sm font-semibold ${linkColor}`}
-                        >
-                          View Certificate
-                        </a>
-                      )}
+                    <div className="w-5/12 text-left">
+                      <TiltCard isDarkMode={isDarkMode} intensity={8}>
+                        <div className={`p-6 rounded-2xl ${cardBg} border border-gray-300/10 shadow-lg text-left backdrop-blur-md`}>
+                          <h3 className={`text-2xl font-bold ${cardTextColor}`}>{item.role}</h3>
+                          <p className={`text-md font-semibold ${subHeadingColor} mb-2`}>{item.company}</p>
+                          <span className={`text-sm ${textColor} block mb-2`}>{item.duration}</span>
+                          <p className={`text-sm ${textColor} mb-4 leading-relaxed`}>{item.description}</p>
+                          {item.certificateUrl && (
+                            <a 
+                              href={item.certificateUrl} 
+                              target="_blank" 
+                              rel="noopener noreferrer" 
+                              className={`inline-flex items-center text-sm font-bold ${linkColor}`}
+                            >
+                              View Certificate
+                            </a>
+                          )}
+                        </div>
+                      </TiltCard>
                     </div>
                   </>
                 )}
@@ -270,35 +301,43 @@ function Experience({ isDarkMode }) {
           </div>
         </div>
         
-        {/* Mobile Timeline (as a fallback) */}
+        {/* Mobile Timeline */}
         <div className="md:hidden flex flex-col items-center">
-          <div className="relative pl-8"> {/* यहां से border-l-4 हटा दिया गया है */}
+          <div className="relative pl-8">
             {experienceData.map((item) => (
-              <div key={item.id} className="mb-10 relative">
-                <div className={`absolute -left-5 transform -translate-y-1/2 top-4 h-10 w-10 rounded-full ${dotColor} flex items-center justify-center`}>
+              <div key={item.id} className="mb-12 relative">
+                <div className={`absolute -left-5 transform -translate-y-1/2 top-4 h-10 w-10 rounded-full ${dotColor} flex items-center justify-center z-20`}>
                   <span className={`${iconColor}`}>{item.icon}</span>
                 </div>
-                <div className={`p-6 rounded-xl text-left ${cardBg} shadow-lg transition-colors duration-300`}>
-                  <h3 className={`text-xl font-bold ${cardTextColor}`}>{item.role}</h3>
-                  <p className={`text-md font-medium ${subHeadingColor} mb-2`}>{item.company}</p>
-                  <span className={`text-sm ${textColor} block mb-2`}>{item.duration}</span>
-                  <p className={`text-sm ${textColor} mb-4`}>{item.description}</p>
-                  {item.certificateUrl && (
-                    <a 
-                      href={item.certificateUrl} 
-                      target="_blank" 
-                      rel="noopener noreferrer" 
-                      className={`inline-flex items-center text-sm font-semibold ${linkColor}`}
-                    >
-                      View Certificate
-                    </a>
-                  )}
-                </div>
+                <TiltCard isDarkMode={isDarkMode} intensity={8}>
+                  <div className={`p-6 rounded-2xl text-left ${cardBg} border border-gray-300/10 shadow-lg backdrop-blur-md`}>
+                    <h3 className={`text-xl font-bold ${cardTextColor}`}>{item.role}</h3>
+                    <p className={`text-md font-semibold ${subHeadingColor} mb-2`}>{item.company}</p>
+                    <span className={`text-sm ${textColor} block mb-2`}>{item.duration}</span>
+                    <p className={`text-sm ${textColor} mb-4 leading-relaxed`}>{item.description}</p>
+                    {item.certificateUrl && (
+                      <a 
+                        href={item.certificateUrl} 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        className={`inline-flex items-center text-sm font-bold ${linkColor}`}
+                      >
+                        View Certificate
+                      </a>
+                    )}
+                  </div>
+                </TiltCard>
               </div>
             ))}
           </div>
         </div>
       </div>
+      <style>{`
+        @keyframes expand-width {
+          from { transform: scaleX(0); }
+          to { transform: scaleX(1); }
+        }
+      `}</style>
     </section>
   );
 }
