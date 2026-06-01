@@ -2,10 +2,10 @@ import React, { useState, useEffect } from 'react';
 import projectImage1 from '../assets/project1.png';
 import projectImage2 from '../assets/project2.png';
 import projectImage3 from '../assets/project3.png';
-import { FaGithub, FaTimes, FaGlobe, FaChevronRight } from 'react-icons/fa';
-import DecryptedText from './DecryptedText';
-import TiltCard from './TiltCard';
-import ShapeGrid from './ShapeGrid';
+import { FaTimes, FaGlobe, FaChevronRight } from 'react-icons/fa';
+import DecryptedText from '../background/DecryptedText';
+import TiltCard from '../background/TiltCard';
+import ShapeGrid from '../background/ShapeGrid';
 import ScrollReveal from 'scrollreveal';
 
 function Projects({ isDarkMode }) {
@@ -54,8 +54,7 @@ function Projects({ isDarkMode }) {
       techStack: ["React", "Node.js", "Express", "MongoDB", "TailwindCSS", "OpenAI API"],
       description: "AI-powered career coach providing personalized guidance, resume support, and skill-based recommendations.",
       elaboratedDescription: "MindStep AI is a full-stack career development ecosystem. Built on React and Node.js, it leverages advanced OpenAI models to parse user skills, deliver contextual career growth advice, conduct real-time AI resume grading, automate tailor-made cover letters, and build sequential, interactive tech skill roadmap tracks.",
-      link: "https://mindstep.netlify.app/",
-      githubLink: "https://github.com/himanshu561hi" 
+      link: "https://mindstep.netlify.app/"
     },
     {
       id: 2,
@@ -65,8 +64,7 @@ function Projects({ isDarkMode }) {
       techStack: ["React", "TailwindCSS", "Vite", "React Icons", "Framer Motion"],
       description: "Creative digital portfolio tailored for professional editors, showcasing video editing reels and creative motion assets.",
       elaboratedDescription: "XZ001MEDIA is a premium video production showcase application. It integrates robust customized HTML5 video modules, modern glassmorphic dynamic grid systems, fluid Framer Motion transitions, and fully responsive media feeds, delivering a striking 3D presentation deck for corporate editors and filmmakers.",
-      link: "https://xz001mediazz.netlify.app/",
-      githubLink: "https://github.com/himanshu561hi/portfolio_nishant"
+      link: "https://xz001mediazz.netlify.app/"
     },
     {
       id: 3,
@@ -76,16 +74,15 @@ function Projects({ isDarkMode }) {
       techStack: ["React", "Vite", "TailwindCSS", "React Icons", "VanillaTilt"],
       description: "A modern gym website offering fitness programs, training guidance, and membership details.",
       elaboratedDescription: "The GYM is an interactive hub for local physical fitness centers. Built with a high-fidelity mobile-first architecture, it features a working digital BMI calculator, animated schedule selectors, immersive tilt-action membership option cards, integrated trainer lists, and dynamic testimonials sliders.",
-      link: "https://thegym01.netlify.app/",
-      githubLink: "https://github.com/himanshu561hi/TheGYM" 
+      link: "https://thegym01.netlify.app/"
     }
   ];
 
   return (
-    <section id="projects" className={`py-20 lg:py-28 ${sectionBg} transition-colors duration-300 relative z-10 overflow-hidden`}>
+    <section id="projects" className="py-20 lg:py-28 transition-colors duration-300 relative z-10 overflow-hidden">
       
       {/* High-Contrast ShapeGrid Grid-Pattern Animated Canvas Background (Hexagon pattern in diagonal motion) */}
-      <div className="absolute inset-0 w-full h-full -z-10 opacity-80 pointer-events-none">
+      <div className={`absolute inset-0 w-full h-full -z-10 opacity-80 pointer-events-none ${sectionBg}`}>
         <ShapeGrid 
           speed={0.35} 
           squareSize={42}
@@ -110,11 +107,7 @@ function Projects({ isDarkMode }) {
           <div className={`w-32 h-1.5 rounded-full mt-4 ${isDarkMode ? 'bg-gradient-to-r from-[#8b5cf6] to-[#d946ef]' : 'bg-gradient-to-r from-purple-600 to-indigo-500'} scale-x-0 animate-[expand-width_1s_ease-out_forwards]`} />
           
           <p className={`text-lg ${subHeadingColor} mt-6 max-w-3xl mx-auto font-medium leading-relaxed`}>
-            Below you can see some examples of my recent work. Check out my complete{' '}
-            <a href="https://github.com/himanshu561hi" target="_blank" rel="noopener noreferrer" className={`font-semibold ${linkColor}`}>
-              GitHub profile
-            </a>
-            . Have an exciting project in mind?{' '}
+            Below you can see some examples of my recent work. Have an exciting project in mind?{' '}
             <a href="#contact" className={`font-semibold ${linkColor}`}>
               Let's build something exceptional together!
             </a>
@@ -244,19 +237,10 @@ function Projects({ isDarkMode }) {
                         </div>
 
                         {/* Back Card Actions */}
-                        <div className="flex gap-3 mt-auto items-center">
-                          <a
-                            href={project.githubLink}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className={`flex-grow inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl ${isDarkMode ? 'bg-[#030014] text-teal-400 hover:text-teal-300 border border-teal-500/20 hover:border-teal-400/40' : 'bg-gray-100 hover:bg-gray-200 text-purple-600 border border-purple-500/20'} font-bold text-sm transition-all duration-300 hover:scale-103`}
-                          >
-                            <FaGithub className="text-lg" />
-                            <span>GitHub Source</span>
-                          </a>
+                        <div className="flex gap-3 mt-auto items-center w-full">
                           <button
                             onClick={(e) => toggleFlip(project.id, e)}
-                            className={`px-5 py-3.5 rounded-xl ${buttonBg} text-white font-bold text-sm transition-all duration-300 hover:scale-103 hover:shadow-lg`}
+                            className={`w-full inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl ${buttonBg} text-white font-bold text-sm transition-all duration-300 hover:scale-103 hover:shadow-lg`}
                           >
                             <span>Back To Front</span>
                           </button>
@@ -269,13 +253,6 @@ function Projects({ isDarkMode }) {
               </div>
             );
           })}
-        </div>
-       
-        <div className="text-center mt-16">
-          <a href="https://github.com/himanshu561hi" target="_blank" rel="noopener noreferrer" className={`font-semibold ${linkColor} text-lg inline-flex items-center group`}>
-            Explore all other codebases on GitHub
-            <span className="ml-2 text-xl transform group-hover:translate-x-1.5 transition-transform duration-300">&rarr;</span>
-          </a>
         </div>
       </div>
 

@@ -1,8 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaHandshake, FaDownload } from 'react-icons/fa';
 import resume from '../assets/resume.pdf';
-import DecryptedText from './DecryptedText';
-import TiltCard from './TiltCard';
+import DecryptedText from '../background/DecryptedText';
+import TiltCard from '../background/TiltCard';
 
 function Contact({ isDarkMode }) {
   const canvasRef = useRef(null);

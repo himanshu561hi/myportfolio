@@ -13,10 +13,7 @@ import Footer from './components/footer';
 import profilePic from './assets/pic.png';
 
 function App() {
-  const [isDarkMode, setIsDarkMode] = useState(() => {
-    const savedTheme = localStorage.getItem('theme');
-    return savedTheme !== 'light'; // Default to dark mode
-  });
+  const isDarkMode = false;
 
   const heroImagePlaceholderRef = useRef(null);
   const aboutImagePlaceholderRef = useRef(null);
@@ -30,10 +27,7 @@ function App() {
     }
   }, [isDarkMode]);
 
-  const toggleTheme = () => {
-    setIsDarkMode(!isDarkMode);
-    localStorage.setItem('theme', isDarkMode ? 'light' : 'dark');
-  };
+  const toggleTheme = () => {};
 
   // Flying Developer Image coordinate interpolation script
   useEffect(() => {

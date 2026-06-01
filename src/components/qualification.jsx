@@ -2,9 +2,9 @@
 
 import React from 'react';
 import { FaGraduationCap } from 'react-icons/fa';
-import DecryptedText from './DecryptedText';
-import TiltCard from './TiltCard';
-import SectionParticles from './SectionParticles';
+import DecryptedText from '../background/DecryptedText';
+import TiltCard from '../background/TiltCard';
+import DotField from '../background/DotField';
 
 function Qualification({ isDarkMode }) {
   const sectionBg = isDarkMode 
@@ -49,10 +49,22 @@ function Qualification({ isDarkMode }) {
   ];
 
   return (
-    <section id="qualification" className={`relative py-16 lg:py-24 flex items-center ${sectionBg} transition-colors duration-300 overflow-hidden z-10`}>
+    <section id="qualification" className="relative py-16 lg:py-24 flex items-center transition-colors duration-300 overflow-hidden z-10">
       
-      {/* Canvas Nebula Particle Overlay */}
-      <SectionParticles type="nebula" isDarkMode={isDarkMode} />
+      {/* Interactive Dot Field Animated Canvas Grid Background */}
+      <div className={`absolute inset-0 w-full h-full -z-10 opacity-75 pointer-events-none ${sectionBg}`}>
+        <DotField
+          dotRadius={1.5}
+          dotSpacing={14}
+          bulgeStrength={60}
+          glowRadius={180}
+          sparkle={false}
+          waveAmplitude={1.5}
+          gradientFrom={isDarkMode ? 'rgba(45, 212, 191, 0.2)' : 'rgba(0, 0, 0, 0.35)'}
+          gradientTo={isDarkMode ? 'rgba(99, 102, 241, 0.08)' : 'rgba(0, 0, 0, 0.15)'}
+          glowColor={isDarkMode ? 'rgba(45, 212, 191, 0.15)' : 'rgba(0, 0, 0, 0.08)'}
+        />
+      </div>
 
       <div className="container mx-auto px-8 md:px-4 text-center relative z-10 flex flex-col items-center">
         <span className={`text-xl font-bold mb-3 block ${subHeadingColor} tracking-wider uppercase`}>My Education</span>

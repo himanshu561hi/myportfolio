@@ -130,7 +130,7 @@
 // src/components/Navbar.jsx
 
 import React, { useState, useEffect } from 'react';
-import { FaLinkedinIn, FaSun, FaMoon, FaGithub, FaBars, FaTimes } from 'react-icons/fa';
+import { FaLinkedinIn, FaGithub, FaBars, FaTimes } from 'react-icons/fa';
 import { motion, AnimatePresence } from 'motion/react';
 
 function Navbar({ isDarkMode, toggleTheme }) {
@@ -204,20 +204,14 @@ function Navbar({ isDarkMode, toggleTheme }) {
           ))}
         </ul>
 
-        {/* Social Icons & Theme Toggle Button (Desktop) */}
+        {/* Social Icons (Desktop) */}
         <div className="hidden md:flex space-x-4 items-center">
           <a href="https://www.linkedin.com/in/himanshu561hi/" className={`text-lg p-2 rounded-xl transition-all duration-300 hover:bg-teal-500/10 ${socialIconColor} ${hoverSocialIconColor}`}><FaLinkedinIn /></a>
           <a href="https://github.com/himanshu561hi" className={`text-lg p-2 rounded-xl transition-all duration-300 hover:bg-teal-500/10 ${socialIconColor} ${hoverSocialIconColor}`}><FaGithub /></a>
-          <button onClick={toggleTheme} className={`p-2 rounded-full ${themeBtnBg} ${themeBtnColor} ${hoverThemeBtnColor} transition-all duration-300 hover:scale-110 active:scale-95 cursor-pointer`}>
-            {isDarkMode ? <FaSun /> : <FaMoon />}
-          </button>
         </div>
 
         {/* Mobile Menu Button */}
         <div className="md:hidden flex items-center space-x-2">
-          <button onClick={toggleTheme} className={`p-2 rounded-full ${themeBtnBg} ${themeBtnColor} ${hoverThemeBtnColor} transition-all duration-300 hover:scale-110 active:scale-95 cursor-pointer`}>
-            {isDarkMode ? <FaSun /> : <FaMoon />}
-          </button>
           <button onClick={toggleMenu} className={`text-2xl ${brandColor} p-2 rounded-xl hover:bg-teal-500/10 transition-colors`}>
             {isMenuOpen ? <FaTimes /> : <FaBars />}
           </button>

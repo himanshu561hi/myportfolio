@@ -1,9 +1,9 @@
 import React, { useEffect, useRef } from 'react';
 import { FaGraduationCap, FaBriefcase, FaCode } from 'react-icons/fa';
-import DecryptedText from './DecryptedText';
-import TiltCard from './TiltCard';
-import SectionParticles from './SectionParticles';
-import ScrollStack, { ScrollStackItem } from './ScrollStack';
+import DecryptedText from '../background/DecryptedText';
+import TiltCard from '../background/TiltCard';
+import SectionParticles from '../background/SectionParticles';
+import ScrollStack, { ScrollStackItem } from '../background/ScrollStack';
 import ScrollReveal from 'scrollreveal';
 
 function About({ isDarkMode, imagePlaceholderRef }) {
