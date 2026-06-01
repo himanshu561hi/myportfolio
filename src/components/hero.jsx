@@ -2,10 +2,10 @@ import React, { useRef, useEffect } from 'react';
 import Typed from 'typed.js';
 import resume from '../assets/resume.pdf';
 import { FaLaptopCode, FaMobileAlt, FaChartBar, FaLinkedinIn } from 'react-icons/fa';
-import SplitText from './SplitText';
-import BlurText from './BlurText';
-import DecryptedText from './DecryptedText';
-import SectionParticles from './SectionParticles';
+import SplitText from '../background/SplitText';
+import BlurText from '../background/BlurText';
+import DecryptedText from '../background/DecryptedText';
+import SectionParticles from '../background/SectionParticles';
 
 function HeroSection({ isDarkMode, imagePlaceholderRef }) {
   const typedEl = useRef(null);
