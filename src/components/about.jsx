@@ -11,21 +11,21 @@ function About({ isDarkMode, imagePlaceholderRef }) {
 
   useEffect(() => {
     const sr = ScrollReveal({
-      origin: 'top',
-      distance: '40px',
       duration: 1000,
-      delay: 200,
-      reset: true // Triggers reveal on both scroll up and scroll down
+      delay: 150,
+      reset: true
     });
 
-    if (paragraphRef.current) {
-      sr.reveal(paragraphRef.current, { delay: 100, origin: 'top' });
-    }
+    sr.reveal('.about-subtitle', { origin: 'left', distance: '40px', delay: 100 });
+    sr.reveal('.about-title-wrapper', { origin: 'left', distance: '40px', delay: 200 });
+    sr.reveal('.about-paragraph', { origin: 'left', distance: '50px', delay: 300 });
+    sr.reveal('.about-image-frame', { scale: 0.8, duration: 1250, delay: 150 });
+    sr.reveal('.about-card-stack', { origin: 'bottom', distance: '60px', delay: 400 });
   }, []);
 
   const sectionBg = isDarkMode 
-    ? "bg-[#030014]" 
-    : "bg-indigo-50/15 backdrop-blur-md";
+    ? "bg-gradient-to-br from-[#06001a] via-[#0c062c] to-[#040114]" 
+    : "bg-gradient-to-br from-indigo-50/40 via-purple-50/30 to-blue-50/40 backdrop-blur-md";
 
   const headingColor = isDarkMode ? "text-white" : "text-gray-900";
   const subHeadingColor = isDarkMode ? "text-teal-400" : "text-indigo-600";
@@ -45,7 +45,7 @@ function About({ isDarkMode, imagePlaceholderRef }) {
       <div className="container mx-auto px-8 md:px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 xl:gap-28 items-center relative z-10">
         
         {/* Left Side: Empty circular frame that accepts imagePlaceholderRef */}
-        <div className="hidden lg:flex justify-center mb-12 lg:mb-0">
+        <div className="about-image-frame hidden lg:flex justify-center mb-12 lg:mb-0">
           <TiltCard isDarkMode={isDarkMode} intensity={8} className="rounded-full">
             <div className="relative w-80 h-80 md:w-96 md:h-96 rounded-full overflow-hidden shadow-2xl border-4 border-white dark:border-[#0f0b35] bg-gradient-to-tr from-indigo-500/5 to-teal-500/5 dark:from-indigo-400/5 dark:to-teal-400/5 backdrop-blur-md flex items-center justify-center">
               
@@ -61,9 +61,9 @@ function About({ isDarkMode, imagePlaceholderRef }) {
 
         {/* Right Side: Content */}
         <div className="flex flex-col items-start text-left">
-          <span className={`text-xl font-bold mb-3 ${subHeadingColor} tracking-wider uppercase`}>About Me</span>
+          <span className={`about-subtitle text-xl font-bold mb-3 ${subHeadingColor} tracking-wider uppercase`}>About Me</span>
           
-          <div className="mb-6 flex flex-col items-start">
+          <div className="about-title-wrapper mb-6 flex flex-col items-start">
             <DecryptedText 
               text="Passionate about Building Modern Web Experiences." 
               animateOn="view"
@@ -76,22 +76,24 @@ function About({ isDarkMode, imagePlaceholderRef }) {
 
           <p 
             ref={paragraphRef}
-            className={`text-lg sm:text-xl ${paraColor} mb-8 leading-relaxed font-medium`}
+            className={`about-paragraph text-lg sm:text-xl ${paraColor} mb-8 leading-relaxed font-medium`}
           >
             I'm a dedicated Full-Stack Developer with over 1 year of hands-on experience in creating high-performance and user-friendly websites. I specialize in the MERN stack and am always learning new technologies to deliver exceptional results.
           </p>
 
           {/* Stacked Scrolling Cards using the React Bits ScrollStack component */}
-          <div className="w-full max-w-lg">
+          <div className="about-card-stack w-full max-w-lg">
             <ScrollStack 
               useWindowScroll={true} 
-              itemDistance={24} 
-              itemScale={0.03} 
-              itemStackDistance={18} 
-              baseScale={0.92}
+              itemDistance={48} 
+              itemScale={0.04} 
+              itemStackDistance={16} 
+              baseScale={0.90}
+              rotationAmount={-2.5}
+              blurAmount={2.5}
               stackPosition="25%"
             >
-              <ScrollStackItem itemClassName={`flex items-center p-5 border backdrop-blur-md transition-all duration-300 ${cardBg}`}>
+              <ScrollStackItem itemClassName={`flex items-center p-5 border backdrop-blur-md transition-colors duration-300 ${cardBg}`}>
                 <div className={`p-4 mr-4 rounded-xl ${iconBg} ${iconColor} flex items-center justify-center shadow-inner flex-shrink-0`}>
                   <FaCode className="text-2xl sm:text-3xl" />
                 </div>
@@ -101,7 +103,7 @@ function About({ isDarkMode, imagePlaceholderRef }) {
                 </div>
               </ScrollStackItem>
 
-              <ScrollStackItem itemClassName={`flex items-center p-5 border backdrop-blur-md transition-all duration-300 ${cardBg}`}>
+              <ScrollStackItem itemClassName={`flex items-center p-5 border backdrop-blur-md transition-colors duration-300 ${cardBg}`}>
                 <div className={`p-4 mr-4 rounded-xl ${iconBg} ${iconColor} flex items-center justify-center shadow-inner flex-shrink-0`}>
                   <FaBriefcase className="text-2xl sm:text-3xl" />
                 </div>
@@ -111,7 +113,7 @@ function About({ isDarkMode, imagePlaceholderRef }) {
                 </div>
               </ScrollStackItem>
 
-              <ScrollStackItem itemClassName={`flex items-center p-5 border backdrop-blur-md transition-all duration-300 ${cardBg}`}>
+              <ScrollStackItem itemClassName={`flex items-center p-5 border backdrop-blur-md transition-colors duration-300 ${cardBg}`}>
                 <div className={`p-4 mr-4 rounded-xl ${iconBg} ${iconColor} flex items-center justify-center shadow-inner flex-shrink-0`}>
                   <FaGraduationCap className="text-2xl sm:text-3xl" />
                 </div>

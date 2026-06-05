@@ -155,13 +155,28 @@
 
 // src/components/Experience.jsx
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import { FaGraduationCap, FaBriefcase } from 'react-icons/fa';
 import DecryptedText from '../background/DecryptedText';
 import TiltCard from '../background/TiltCard';
 import DotField from '../background/DotField';
+import ScrollReveal from 'scrollreveal';
 
 function Experience({ isDarkMode }) {
+  useEffect(() => {
+    const sr = ScrollReveal({
+      duration: 1000,
+      delay: 150,
+      reset: true
+    });
+
+    sr.reveal('.experience-header', { origin: 'top', distance: '40px' });
+    sr.reveal('.timeline-line', { origin: 'top', distance: '100px', duration: 1500 });
+    sr.reveal('.experience-card-left', { origin: 'left', distance: '80px', interval: 200 });
+    sr.reveal('.experience-card-right', { origin: 'right', distance: '80px', interval: 200 });
+    sr.reveal('.experience-dot', { scale: 0.4, duration: 800, interval: 150 });
+    sr.reveal('.experience-card-mobile', { origin: 'bottom', distance: '60px', interval: 150 });
+  }, []);
   const sectionBg = isDarkMode 
     ? "bg-[#030014]" 
     : "bg-indigo-50/10 backdrop-blur-sm";
@@ -211,13 +226,14 @@ function Experience({ isDarkMode }) {
       {/* Interactive Dot Field Animated Canvas Grid Background */}
       <div className={`absolute inset-0 w-full h-full -z-10 opacity-75 pointer-events-none ${sectionBg}`}>
         <DotField
-          dotRadius={1.5}
-          dotSpacing={14}
-          bulgeStrength={60}
+          dotRadius={3.5}
+          dotSpacing={18}
+          bulgeStrength={80}
           glowRadius={180}
-          sparkle={false}
-          waveAmplitude={2.0}
-          gradientFrom={isDarkMode ? 'rgba(45, 212, 191, 0.2)' : 'rgba(0, 0, 0, 0.35)'}
+          sparkle={true}
+          waveAmplitude={4.5}
+          speed={2.2}
+          gradientFrom={isDarkMode ? 'rgba(45, 212, 191, 0.22)' : 'rgba(0, 0, 0, 0.35)'}
           gradientTo={isDarkMode ? 'rgba(6, 182, 212, 0.08)' : 'rgba(0, 0, 0, 0.15)'}
           glowColor={isDarkMode ? 'rgba(45, 212, 191, 0.15)' : 'rgba(0, 0, 0, 0.08)'}
         />
@@ -226,7 +242,7 @@ function Experience({ isDarkMode }) {
       <div className="container mx-auto px-8 md:px-4 text-center relative z-10 flex flex-col items-center">
         <span className={`text-xl font-bold mb-3 block ${subHeadingColor} tracking-wider uppercase`}>My Journey</span>
         
-        <div className="mb-16 flex flex-col items-center justify-center">
+        <div className="experience-header mb-16 flex flex-col items-center justify-center">
           <DecryptedText 
             text="Work Experience & Professional History" 
             animateOn="view"
@@ -240,7 +256,7 @@ function Experience({ isDarkMode }) {
         {/* Desktop Timeline */}
         <div className="hidden md:block relative w-full">
           {/* Glowing vertical timeline line */}
-          <div className={`absolute top-0 left-1/2 transform -translate-x-1/2 h-full w-1 ${
+          <div className={`timeline-line absolute top-0 left-1/2 transform -translate-x-1/2 h-full w-1 ${
             isDarkMode 
               ? 'bg-gradient-to-b from-teal-500 via-cyan-400 to-teal-500 shadow-[0_0_8px_rgba(45,212,191,0.4)]' 
               : 'bg-gradient-to-b from-indigo-500 via-purple-400 to-indigo-500'
@@ -255,7 +271,7 @@ function Experience({ isDarkMode }) {
                 {/* Left side content */}
                 {index % 2 === 0 ? (
                   <>
-                    <div className="w-5/12 text-right">
+                    <div className="w-5/12 text-right experience-card-left">
                       <TiltCard isDarkMode={isDarkMode} intensity={8}>
                         <div className={`p-6 rounded-2xl ${cardBg} border border-gray-300/10 shadow-lg text-right backdrop-blur-md`}>
                           <h3 className={`text-2xl font-bold ${cardTextColor}`}>{item.role}</h3>
@@ -275,7 +291,7 @@ function Experience({ isDarkMode }) {
                         </div>
                       </TiltCard>
                     </div>
-                    <div className={`absolute left-1/2 transform -translate-x-1/2 h-12 w-12 rounded-full ${dotColor} flex items-center justify-center z-20`}>
+                    <div className={`experience-dot absolute left-1/2 transform -translate-x-1/2 h-12 w-12 rounded-full ${dotColor} flex items-center justify-center z-20`}>
                       <span className={`${iconColor} text-lg`}>{item.icon}</span>
                     </div>
                     <div className="w-5/12"></div>
@@ -283,10 +299,10 @@ function Experience({ isDarkMode }) {
                 ) : (
                   <>
                     <div className="w-5/12"></div>
-                    <div className={`absolute left-1/2 transform -translate-x-1/2 h-12 w-12 rounded-full ${dotColor} flex items-center justify-center z-20`}>
+                    <div className={`experience-dot absolute left-1/2 transform -translate-x-1/2 h-12 w-12 rounded-full ${dotColor} flex items-center justify-center z-20`}>
                       <span className={`${iconColor} text-lg`}>{item.icon}</span>
                     </div>
-                    <div className="w-5/12 text-left">
+                    <div className="w-5/12 text-left experience-card-right">
                       <TiltCard isDarkMode={isDarkMode} intensity={8}>
                         <div className={`p-6 rounded-2xl ${cardBg} border border-gray-300/10 shadow-lg text-left backdrop-blur-md`}>
                           <h3 className={`text-2xl font-bold ${cardTextColor}`}>{item.role}</h3>
@@ -317,7 +333,7 @@ function Experience({ isDarkMode }) {
         <div className="md:hidden flex flex-col items-center">
           <div className="relative pl-8">
             {experienceData.map((item) => (
-              <div key={item.id} className="mb-12 relative">
+              <div key={item.id} className="mb-12 relative experience-card-mobile">
                 <div className={`absolute -left-5 transform -translate-y-1/2 top-4 h-10 w-10 rounded-full ${dotColor} flex items-center justify-center z-20`}>
                   <span className={`${iconColor}`}>{item.icon}</span>
                 </div>

@@ -13,6 +13,7 @@ const DotField = memo(({
   glowRadius = 160,
   sparkle = false,
   waveAmplitude = 0,
+  speed = 1.0,
   gradientFrom = 'rgba(168, 85, 247, 0.35)',
   gradientTo = 'rgba(180, 151, 207, 0.25)',
   glowColor = '#120F17',
@@ -28,7 +29,7 @@ const DotField = memo(({
   const glowOpacity = useRef(0);
   const engagement = useRef(0);
   const propsRef = useRef({});
-  propsRef.current = { dotRadius, dotSpacing, cursorRadius, cursorForce, bulgeOnly, bulgeStrength, sparkle, waveAmplitude, gradientFrom, gradientTo };
+  propsRef.current = { dotRadius, dotSpacing, cursorRadius, cursorForce, bulgeOnly, bulgeStrength, sparkle, waveAmplitude, speed, gradientFrom, gradientTo };
   const rebuildRef = useRef(null);
   const glowIdRef = useRef(`dot-field-glow-${Math.random().toString(36).slice(2, 9)}`);
 
@@ -129,7 +130,7 @@ const DotField = memo(({
         const { w, h } = sizeRef.current;
         const p = propsRef.current;
         const len = dots.length;
-        const t = frameCount * 0.02;
+        const t = frameCount * 0.02 * p.speed;
 
         const targetEngagement = Math.min(m.speed / 5, 1);
         engagement.current += (targetEngagement - engagement.current) * 0.06;
