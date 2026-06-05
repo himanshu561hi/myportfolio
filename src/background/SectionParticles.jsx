@@ -120,10 +120,21 @@ export default function SectionParticles({ type = 'stars', isDarkMode }) {
             }
           }
           if (mouseRef.current.active) {
-            const dx = (mouseRef.current.x - canvas.width / 2) * 0.005;
-            const dy = (mouseRef.current.y - canvas.height / 2) * 0.005;
-            this.x -= dx * 0.15;
-            this.y -= dy * 0.15;
+            // Parallax drift based on relative cursor position from canvas center
+            const px = (mouseRef.current.x - canvas.width / 2) * 0.0008;
+            const py = (mouseRef.current.y - canvas.height / 2) * 0.0008;
+            this.x -= px;
+            this.y -= py;
+
+            // Localized cursor magnetic repulsion (pushes stars away)
+            const dx = this.x - mouseRef.current.x;
+            const dy = this.y - mouseRef.current.y;
+            const dist = Math.hypot(dx, dy);
+            if (dist < 130) {
+              const force = (130 - dist) / 130;
+              this.x += (dx / dist) * force * 1.5;
+              this.y += (dy / dist) * force * 1.5;
+            }
           }
           this.x += this.speedX * 0.15;
           this.y += this.speedY * 0.15;
@@ -223,20 +234,35 @@ export default function SectionParticles({ type = 'stars', isDarkMode }) {
     resizeCanvas();
 
     const drawConnections = () => {
-      if (type !== 'nodes') return;
+      if (type !== 'nodes' && type !== 'stars') return;
+      
+      const maxDist = type === 'nodes' ? 90 : 85;
       for (let i = 0; i < particles.length; i++) {
         for (let j = i + 1; j < particles.length; j++) {
           const dx = particles[i].x - particles[j].x;
           const dy = particles[i].y - particles[j].y;
           const dist = Math.hypot(dx, dy);
 
-          if (dist < 90) {
-            const alpha = (90 - dist) / 90 * 0.12;
+          if (dist < maxDist) {
+            const ratio = (maxDist - dist) / maxDist;
+            let alpha, colorStr, lineWidth;
+
+            if (type === 'nodes') {
+              alpha = ratio * 0.12;
+              colorStr = primaryColor + alpha + ')';
+              lineWidth = 0.5;
+            } else {
+              // Faint, shimmering constellation links that scale with proximity and twinkle opacity
+              alpha = ratio * ratio * 0.09 * (particles[i].opacity * particles[j].opacity);
+              colorStr = isDarkMode ? `rgba(139, 92, 246, ${alpha})` : `rgba(79, 70, 229, ${alpha})`;
+              lineWidth = 0.35;
+            }
+
             ctx.beginPath();
             ctx.moveTo(particles[i].x, particles[i].y);
             ctx.lineTo(particles[j].x, particles[j].y);
-            ctx.strokeStyle = primaryColor + alpha + ')';
-            ctx.lineWidth = 0.5;
+            ctx.strokeStyle = colorStr;
+            ctx.lineWidth = lineWidth;
             ctx.stroke();
           }
         }

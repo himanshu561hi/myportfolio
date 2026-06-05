@@ -1,10 +1,11 @@
 // src/components/Qualification.jsx
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import { FaGraduationCap } from 'react-icons/fa';
 import DecryptedText from '../background/DecryptedText';
 import TiltCard from '../background/TiltCard';
 import DotField from '../background/DotField';
+import ScrollReveal from 'scrollreveal';
 
 function Qualification({ isDarkMode }) {
   const sectionBg = isDarkMode 
@@ -17,6 +18,19 @@ function Qualification({ isDarkMode }) {
   const cardTextColor = isDarkMode ? "text-white" : "text-gray-800";
   const textColor = isDarkMode ? "text-gray-300" : "text-gray-600";
   const iconColor = isDarkMode ? "text-teal-400" : "text-purple-600";
+
+  useEffect(() => {
+    const sr = ScrollReveal({
+      duration: 1000,
+      delay: 150,
+      reset: true
+    });
+
+    sr.reveal('.qualification-header', { delay: 100, origin: 'top', distance: '40px' });
+    sr.reveal('.qualification-card-1', { delay: 200, distance: '80px', origin: 'left' });
+    sr.reveal('.qualification-card-2', { delay: 250, distance: '80px', origin: 'bottom' });
+    sr.reveal('.qualification-card-3', { delay: 300, distance: '80px', origin: 'right' });
+  }, []);
 
   const qualificationsData = [
     {
@@ -54,13 +68,14 @@ function Qualification({ isDarkMode }) {
       {/* Interactive Dot Field Animated Canvas Grid Background */}
       <div className={`absolute inset-0 w-full h-full -z-10 opacity-75 pointer-events-none ${sectionBg}`}>
         <DotField
-          dotRadius={1.5}
-          dotSpacing={14}
-          bulgeStrength={60}
+          dotRadius={3.5}
+          dotSpacing={18}
+          bulgeStrength={80}
           glowRadius={180}
-          sparkle={false}
-          waveAmplitude={1.5}
-          gradientFrom={isDarkMode ? 'rgba(45, 212, 191, 0.2)' : 'rgba(0, 0, 0, 0.35)'}
+          sparkle={true}
+          waveAmplitude={4.5}
+          speed={2.2}
+          gradientFrom={isDarkMode ? 'rgba(45, 212, 191, 0.22)' : 'rgba(0, 0, 0, 0.35)'}
           gradientTo={isDarkMode ? 'rgba(99, 102, 241, 0.08)' : 'rgba(0, 0, 0, 0.15)'}
           glowColor={isDarkMode ? 'rgba(45, 212, 191, 0.15)' : 'rgba(0, 0, 0, 0.08)'}
         />
@@ -69,7 +84,7 @@ function Qualification({ isDarkMode }) {
       <div className="container mx-auto px-8 md:px-4 text-center relative z-10 flex flex-col items-center">
         <span className={`text-xl font-bold mb-3 block ${subHeadingColor} tracking-wider uppercase`}>My Education</span>
         
-        <div className="mb-16 flex flex-col items-center justify-center">
+        <div className="qualification-header mb-16 flex flex-col items-center justify-center">
           <DecryptedText 
             text="Education & Certifications" 
             animateOn="view"
@@ -86,7 +101,7 @@ function Qualification({ isDarkMode }) {
               key={item.id} 
               isDarkMode={isDarkMode} 
               intensity={12}
-              className="w-full lg:w-1/3 flex"
+              className={`w-full lg:w-1/3 flex qualification-card qualification-card-${item.id}`}
             >
               <div 
                 className={`flex flex-col items-center justify-center p-8 rounded-2xl w-full ${cardBg} border border-gray-300/10 shadow-lg backdrop-blur-md transition-colors duration-300 h-full`}
