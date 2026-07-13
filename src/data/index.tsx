@@ -250,7 +250,7 @@ export const profiles = [
   {
     platform: "Instagram",
     description: "Follow me for behind-the-scenes tech updates and personal projects.",
-    link: "https://instagram.com/himanshu561hi",
+    link: "https://instagram.com/_oye_himanshu",
     icon: <FaInstagram />,
     iconColor: "text-pink-600",
   }
