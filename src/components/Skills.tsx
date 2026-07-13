@@ -85,7 +85,7 @@ const Skills = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.1 }}
               transition={{ delay: index * 0.04, duration: 0.4, ease: "easeOut" }}
-              className="group flex items-center gap-2.5 w-fit px-[24px] py-[14px] bg-white/40 backdrop-blur-[20px] border border-white/60 rounded-full shadow-[0_8px_32px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_25px_rgba(37,99,235,0.15)] hover:border-blue-400 hover:-translate-y-1 transition-all duration-300 cursor-default"
+              className="group flex items-center gap-2.5 w-fit px-[24px] py-[14px] bg-white/30 backdrop-blur-xl border border-white/50 shadow-[0_8px_32px_rgba(31,38,135,0.1)] rounded-full hover:shadow-[0_8px_25px_rgba(37,99,235,0.15)] hover:border-blue-400 hover:-translate-y-1 transition-all duration-300 cursor-default"
             >
               <div className="text-[20px] transform group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
                 {tech.icon}

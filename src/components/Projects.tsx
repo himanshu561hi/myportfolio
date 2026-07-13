@@ -91,10 +91,10 @@ const Projects = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7, ease: "easeOut" }}
-            className="flex flex-col lg:flex-row bg-white/60 backdrop-blur-[20px] border border-white/80 rounded-[32px] shadow-[0_12px_40px_rgba(0,0,0,0.06)] overflow-hidden min-h-[500px]"
+            className="flex flex-col lg:flex-row bg-white/30 backdrop-blur-xl border border-white/50 shadow-[0_8px_32px_rgba(31,38,135,0.1)] rounded-[32px] overflow-hidden min-h-[400px]"
           >
             {/* Left: Animated Image Viewer */}
-            <div className="w-full lg:w-[55%] relative overflow-hidden bg-gray-900/5 flex items-center justify-center p-6 sm:p-10 border-b lg:border-b-0 lg:border-r border-white/40">
+            <div className="w-full lg:w-[55%] relative overflow-hidden bg-gray-900/5 flex items-center justify-center p-6 sm:p-8 border-b lg:border-b-0 lg:border-r border-white/40">
               
               {/* Blurred Background Image for depth */}
               <AnimatePresence mode="wait">
@@ -127,7 +127,7 @@ const Projects = () => {
             </div>
 
             {/* Right: Dynamic Content */}
-            <div className="w-full lg:w-[45%] p-8 sm:p-12 flex flex-col relative overflow-hidden">
+            <div className="w-full lg:w-[45%] p-6 sm:p-8 flex flex-col relative overflow-hidden">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={`content-${activeIndex}`}
@@ -137,16 +137,16 @@ const Projects = () => {
                   transition={{ duration: 0.5, ease: "easeOut" }}
                   className="flex flex-col h-full"
                 >
-                  <h3 className="text-[32px] sm:text-[36px] font-space font-bold text-gray-900 mb-4 leading-tight">
+                  <h3 className="text-[28px] sm:text-[32px] font-space font-bold text-gray-900 mb-3 leading-tight">
                     {activeProject.title}
                   </h3>
-                  <p className="text-gray-600 text-[16.5px] leading-relaxed mb-8">
+                  <p className="text-gray-600 text-[15.5px] leading-relaxed mb-6">
                     {activeProject.description}
                   </p>
                   
                   {/* Dynamic Features List */}
                   {activeProject.features && (
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-3 gap-x-4 mb-8">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-2.5 gap-x-4 mb-6">
                       {activeProject.features.map((feature, i) => (
                         <div key={i} className="flex items-center text-[14.5px] text-gray-700 font-medium">
                           <CheckCircle2 size={16} className="text-blue-500 mr-2.5 flex-shrink-0" />
@@ -157,7 +157,7 @@ const Projects = () => {
                   )}
 
                   {/* Tech Chips */}
-                  <div className="flex flex-wrap gap-2.5 mb-10">
+                  <div className="flex flex-wrap gap-2 mb-6">
                     {activeProject.tech.map((tech, i) => (
                       <span key={i} className="px-3.5 py-1.5 text-[13px] font-semibold text-blue-700 bg-blue-50/70 border border-blue-200/80 rounded-full shadow-sm">
                         {tech}

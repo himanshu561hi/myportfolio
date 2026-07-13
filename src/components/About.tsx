@@ -15,7 +15,7 @@ const StatCard = ({ icon, count, label, delay }: { icon: React.ReactNode, count:
     viewport={{ once: true, amount: 0.2 }}
     transition={{ delay, duration: 0.6, ease: "easeOut" }}
     whileHover={{ y: -8, scale: 1.02 }}
-    className="flex flex-col items-center justify-center p-6 bg-white/40 backdrop-blur-[16px] border border-white/60 rounded-[24px] shadow-[0_4px_20px_rgb(0,0,0,0.03)] hover:shadow-[0_15px_30px_rgb(0,0,0,0.08)] transition-all duration-300"
+    className="flex flex-col items-center justify-center p-6 bg-white/30 backdrop-blur-xl border border-white/50 shadow-[0_8px_32px_rgba(31,38,135,0.1)] rounded-[24px] hover:shadow-[0_15px_30px_rgb(0,0,0,0.08)] transition-all duration-300"
   >
     <div className="text-blue-500 mb-3 text-3xl">{icon}</div>
     <div className="text-3xl sm:text-4xl font-space font-bold text-gray-900">{count}</div>

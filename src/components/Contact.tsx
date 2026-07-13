@@ -50,7 +50,7 @@ const Contact = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
-            className="w-full lg:w-3/5 p-8 sm:p-10 bg-white/60 backdrop-blur-[20px] border border-white/80 rounded-[28px] shadow-[0_8px_32px_rgba(0,0,0,0.04)]"
+            className="w-full lg:w-3/5 p-8 sm:p-10 bg-white/30 backdrop-blur-xl border border-white/50 shadow-[0_8px_32px_rgba(31,38,135,0.1)] rounded-[28px]"
           >
             <form className="flex flex-col gap-6">
               <div className="flex flex-col sm:flex-row gap-6">
@@ -110,7 +110,7 @@ const Contact = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
-            className="w-full lg:w-2/5 flex flex-col gap-8 p-8 sm:p-10 bg-gradient-to-br from-blue-50/80 to-white/60 backdrop-blur-[20px] border border-white/80 rounded-[28px] shadow-[0_8px_32px_rgba(0,0,0,0.04)]"
+            className="w-full lg:w-2/5 flex flex-col gap-8 p-8 sm:p-10 bg-gradient-to-br from-blue-50/40 to-white/30 backdrop-blur-xl border border-white/50 rounded-[28px] shadow-[0_8px_32px_rgba(31,38,135,0.1)]"
           >
             
             <div className="flex items-start gap-5 group">

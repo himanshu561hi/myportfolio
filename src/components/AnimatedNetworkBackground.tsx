@@ -7,7 +7,7 @@ export const AnimatedNetworkBackground: React.FC = () => {
     const canvas = canvasRef.current;
     if (!canvas) return;
     
-    const ctx = canvas.getContext('2d', { alpha: false }); // alpha false optimizes performance for solid background
+    const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
     let animationFrameId: number;
@@ -107,9 +107,8 @@ export const AnimatedNetworkBackground: React.FC = () => {
     const animate = () => {
       if (!ctx) return;
       
-      // Draw background
-      ctx.fillStyle = '#ffffff';
-      ctx.fillRect(0, 0, window.innerWidth, window.innerHeight);
+      // Clear background
+      ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
       
       // Update particles
       particles.forEach(p => p.update());

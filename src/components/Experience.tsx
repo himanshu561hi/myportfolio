@@ -111,7 +111,7 @@ const Experience = () => {
                   transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
                   className={`w-full md:w-[47%] pl-[76px] md:pl-0 ${isEven ? 'md:pr-[50px]' : 'md:pl-[50px]'}`}
                 >
-                  <div className="p-6 sm:p-7 bg-white/60 backdrop-blur-[20px] border border-white/80 rounded-[24px] shadow-[0_8px_32px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_25px_rgba(37,99,235,0.12)] hover:-translate-y-1 transition-all duration-300">
+                  <div className="p-6 sm:p-7 bg-white/30 backdrop-blur-xl border border-white/50 shadow-[0_8px_32px_rgba(31,38,135,0.1)] rounded-[24px] hover:shadow-[0_8px_25px_rgba(37,99,235,0.12)] hover:-translate-y-1 transition-all duration-300">
                     
                     <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-4 gap-2 sm:gap-0">
                       <div>

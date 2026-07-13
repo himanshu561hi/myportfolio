@@ -82,7 +82,7 @@ const CodingProfiles = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ delay: index * 0.1, duration: 0.5, ease: "easeOut" }}
-              className="flex flex-col h-full p-8 bg-white/60 backdrop-blur-[20px] border border-white/80 rounded-[28px] shadow-[0_8px_32px_rgba(0,0,0,0.04)] hover:shadow-[0_0_30px_rgba(37,99,235,0.12)] hover:-translate-y-2 hover:border-blue-300 transition-all duration-300 group"
+              className="flex flex-col h-full p-8 bg-white/30 backdrop-blur-xl border border-white/50 shadow-[0_8px_32px_rgba(31,38,135,0.1)] rounded-[28px] hover:shadow-[0_0_30px_rgba(37,99,235,0.12)] hover:-translate-y-2 hover:border-blue-300 transition-all duration-300 group"
             >
               <div className={`text-[46px] mb-6 ${profile.iconColor} transform group-hover:scale-110 transition-transform duration-300 origin-left`}>
                 {profile.icon}
