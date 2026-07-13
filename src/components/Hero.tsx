@@ -41,9 +41,7 @@ const Hero = () => {
   return (
     <section id="home" className="relative w-full min-h-screen flex items-center justify-center bg-transparent pt-20 overflow-hidden">
       
-      {/* Subtle Background Gradient Blobs */}
-      <div className="absolute top-1/4 left-1/4 w-[300px] h-[300px] sm:w-[400px] sm:h-[400px] bg-blue-400/15 rounded-full blur-[100px] -z-10 mix-blend-multiply"></div>
-      <div className="absolute bottom-1/4 right-1/4 w-[300px] h-[300px] sm:w-[400px] sm:h-[400px] bg-indigo-400/15 rounded-full blur-[100px] -z-10 mix-blend-multiply"></div>
+      {/* Subtle Background Gradient Blobs removed to avoid overlapping with global app blobs */}
 
       <div className="max-w-[1200px] w-full mx-auto px-6 h-full flex flex-col lg:flex-row items-center justify-between relative z-10 gap-8 lg:gap-4">
         
