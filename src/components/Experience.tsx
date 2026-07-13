@@ -43,7 +43,7 @@ const Experience = () => {
         </div>
 
         {/* Timeline Section */}
-        <div className="relative w-full mx-auto mt-4">
+        <div className="relative w-full max-w-[950px] mx-auto mt-4">
           
           {/* Vertical Animated Line */}
           <motion.div 
@@ -51,39 +51,38 @@ const Experience = () => {
             whileInView={{ height: '100%' }}
             viewport={{ once: true }}
             transition={{ duration: 1.5, ease: "easeInOut" }}
-            className="absolute left-[12px] md:left-1/2 top-0 bottom-0 w-[3px] md:w-1 bg-gradient-to-b from-blue-500 via-purple-500 to-transparent transform md:-translate-x-1/2 rounded-full"
+            className="absolute left-[12px] md:left-[24px] top-0 bottom-0 w-[3px] md:w-1 bg-gradient-to-b from-blue-500 via-purple-500 to-transparent transform -translate-x-1/2 rounded-full"
           />
 
           {experiences.map((exp, index) => {
-            const isEven = index % 2 === 0;
-
             return (
-              <div key={index} className={`relative flex flex-col md:flex-row items-center w-full mb-10 md:mb-16 last:mb-0 ${isEven ? 'md:justify-start' : 'md:justify-end'}`}>
+              <div key={index} className="relative flex flex-col w-full mb-10 md:mb-14 last:mb-0">
                 
                 {/* Circular Node */}
-                <div className="absolute left-[12px] md:left-1/2 w-[16px] h-[16px] md:w-[22px] md:h-[22px] rounded-full bg-gradient-to-r from-blue-500 to-purple-600 transform -translate-x-1/2 shadow-[0_0_15px_rgba(37,99,235,0.6)] z-10 items-center justify-center top-8 md:top-auto flex">
+                <div className="absolute left-[12px] md:left-[24px] w-[16px] h-[16px] md:w-[22px] md:h-[22px] rounded-full bg-gradient-to-r from-blue-500 to-purple-600 transform -translate-x-1/2 shadow-[0_0_15px_rgba(37,99,235,0.6)] z-10 flex items-center justify-center top-8 md:top-10">
                   <div className="w-1.5 h-1.5 md:w-2.5 md:h-2.5 bg-white rounded-full"></div>
                 </div>
                 
                 {/* Experience Card */}
                 <motion.div 
-                  initial={{ opacity: 0, x: isEven ? -20 : 20, y: 20 }}
+                  initial={{ opacity: 0, x: -20, y: 20 }}
                   whileInView={{ opacity: 1, x: 0, y: 0 }}
                   viewport={{ once: true, amount: 0.2 }}
-                  transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
-                  className={`w-full md:w-[47%] pl-[40px] md:pl-0 ${isEven ? 'md:pr-[50px]' : 'md:pl-[50px]'}`}
+                  transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
+                  className="w-full pl-[40px] md:pl-[64px]"
                 >
-                  <div className="p-6 sm:p-7 bg-white/30 backdrop-blur-xl border border-white/50 shadow-[0_8px_32px_rgba(31,38,135,0.1)] rounded-[24px] hover:shadow-[0_8px_25px_rgba(37,99,235,0.12)] hover:-translate-y-1 transition-all duration-300">
+                  <div className="p-6 sm:p-7 md:p-8 bg-white/30 backdrop-blur-xl border border-white/50 shadow-[0_8px_32px_rgba(31,38,135,0.1)] rounded-[24px] hover:shadow-[0_8px_25px_rgba(37,99,235,0.12)] hover:-translate-y-1 transition-all duration-300">
                     
-                    <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-4 gap-2 sm:gap-0">
-                      <div>
-                        <h3 className="text-[20px] sm:text-[22px] font-space font-bold text-gray-900 mb-0.5">{exp.company}</h3>
-                        <h4 className="text-[16px] font-inter font-semibold text-blue-600 flex items-center gap-1.5">
-                          <Briefcase size={15} />
+                    <div className="flex flex-col xl:flex-row xl:items-center justify-between mb-5 gap-3 xl:gap-0">
+                      <div className="flex flex-col md:flex-row md:items-center gap-2 md:gap-3">
+                        <h3 className="text-[19px] sm:text-[22px] font-space font-bold text-gray-900 leading-tight">{exp.company}</h3>
+                        <span className="hidden md:block text-gray-300 font-medium">|</span>
+                        <h4 className="text-[16px] sm:text-[17px] font-inter font-semibold text-blue-600 flex items-center gap-1.5 leading-tight">
+                          <Briefcase size={16} />
                           {exp.role}
                         </h4>
                       </div>
-                      <div className="inline-block self-start px-3 py-1 text-[11px] font-bold tracking-wide text-blue-700 bg-blue-100/80 rounded-full border border-blue-200/50">
+                      <div className="inline-block self-start xl:self-auto px-3 py-1.5 text-[12px] font-bold tracking-wide text-blue-700 bg-blue-100/80 rounded-full border border-blue-200/50 whitespace-nowrap">
                         {exp.duration}
                       </div>
                     </div>

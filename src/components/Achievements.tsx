@@ -6,15 +6,16 @@ import { achievements } from '../data';
 
 const Achievements = () => {
   const [selectedAchievement, setSelectedAchievement] = useState<any>(null);
+  const [fullscreenImage, setFullscreenImage] = useState<string | null>(null);
 
   // Prevent body scroll when modal is open
   React.useEffect(() => {
-    if (selectedAchievement) {
+    if (selectedAchievement || fullscreenImage) {
       document.body.style.overflow = 'hidden';
     } else {
       document.body.style.overflow = 'unset';
     }
-  }, [selectedAchievement]);
+  }, [selectedAchievement, fullscreenImage]);
 
   return (
     <section id="achievements" className="relative w-full py-[50px] md:py-[80px] bg-transparent overflow-hidden">
@@ -143,13 +144,17 @@ const Achievements = () => {
                 </div>
                 
                 {/* Images Gallery */}
-                <div className="flex flex-col sm:flex-row gap-5 pt-1">
+                <div className="flex flex-col sm:flex-row justify-center gap-5 pt-1">
                   {selectedAchievement.images?.map((img: string, i: number) => (
-                    <div key={i} className="flex-1 relative group rounded-2xl overflow-hidden border border-gray-100 shadow-sm bg-gray-50 flex items-center justify-center">
+                    <div 
+                      key={i} 
+                      className="relative group rounded-2xl overflow-hidden border border-gray-100 shadow-sm bg-gray-100/50 flex items-center justify-center min-w-0 cursor-pointer"
+                      onClick={() => setFullscreenImage(img)}
+                    >
                       <img 
                         src={img} 
                         alt={`${selectedAchievement.title} screenshot ${i+1}`}
-                        className="w-full h-auto object-contain rounded-2xl transform group-hover:scale-105 transition-transform duration-500"
+                        className="w-auto max-w-full h-auto max-h-[250px] sm:max-h-[350px] object-contain rounded-2xl transform group-hover:scale-105 transition-transform duration-500"
                         loading="lazy"
                       />
                     </div>
@@ -157,6 +162,36 @@ const Achievements = () => {
                 </div>
               </div>
             </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* Fullscreen Image Viewer Modal */}
+      <AnimatePresence>
+        {fullscreenImage && (
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-8 bg-black/90 backdrop-blur-sm"
+            onClick={() => setFullscreenImage(null)}
+          >
+            <button 
+              onClick={() => setFullscreenImage(null)}
+              className="absolute top-6 right-6 p-3 text-white/70 hover:text-white bg-black/50 hover:bg-black/80 rounded-full transition-colors z-[110]"
+            >
+              <X size={28} />
+            </button>
+            <motion.img 
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              transition={{ type: 'spring', damping: 25, stiffness: 300 }}
+              src={fullscreenImage} 
+              alt="Fullscreen view"
+              className="max-w-full max-h-full object-contain rounded-lg shadow-2xl cursor-default"
+              onClick={(e) => e.stopPropagation()} // Prevent clicking image from closing modal
+            />
           </motion.div>
         )}
       </AnimatePresence>

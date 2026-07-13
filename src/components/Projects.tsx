@@ -145,7 +145,7 @@ const Projects = () => {
           </motion.div>
 
           {/* Bottom: Thumbnail Selector */}
-          <div className="flex gap-4 sm:gap-6 overflow-x-auto pb-6 pt-4 px-2 w-full snap-x [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+          <div className="flex gap-4 sm:gap-6 overflow-x-auto md:justify-center pb-6 pt-4 px-2 w-full snap-x [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
             {projects.map((project, index) => (
               <button 
                 key={index}

@@ -5,6 +5,7 @@ import Typed from 'typed.js';
 import { SiReact, SiNodedotjs, SiMongodb, SiTypescript, SiGit } from 'react-icons/si';
 import { Sparkles, ChevronDown } from 'lucide-react';
 import himanshuImg from '../assets/him.png';
+import resumePdf from '../assets/Resume.pdf';
 import { socialLinks } from '../data';
 
 const Hero = () => {
@@ -87,8 +88,8 @@ const Hero = () => {
               🚀 View Projects
             </motion.a>
             <motion.a
-              href="/resume.pdf"
-              download
+              href={resumePdf}
+              download="Himanshu_Gupta_Resume.pdf"
               whileHover={{ scale: 1.03, y: -2 }}
               whileTap={{ scale: 0.97 }}
               className="w-full sm:w-auto px-8 py-3.5 rounded-full bg-white/70 backdrop-blur-md text-gray-800 text-[15px] font-bold border border-gray-200 shadow-sm hover:shadow-md hover:border-gray-300 transition-all flex items-center justify-center gap-2"

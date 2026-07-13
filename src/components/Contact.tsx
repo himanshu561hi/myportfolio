@@ -52,13 +52,20 @@ const Contact = () => {
             transition={{ duration: 0.6, ease: "easeOut" }}
             className="w-full lg:w-3/5 p-8 sm:p-10 bg-white/30 backdrop-blur-xl border border-white/50 shadow-[0_8px_32px_rgba(31,38,135,0.1)] rounded-[28px]"
           >
-            <form className="flex flex-col gap-6">
+            <form action="https://formsubmit.co/himanshu561hi@gmail.com" method="POST" className="flex flex-col gap-6">
+              {/* FormSubmit Configuration */}
+              <input type="hidden" name="_template" value="box" />
+              <input type="hidden" name="_captcha" value="true" />
+              <input type="hidden" name="_next" value={typeof window !== 'undefined' ? window.location.href : ""} />
+
               <div className="flex flex-col sm:flex-row gap-6">
                 <div className="flex flex-col gap-2 w-full">
                   <label htmlFor="name" className="text-sm font-bold text-gray-700 tracking-wide uppercase">Name</label>
                   <input 
                     type="text" 
                     id="name" 
+                    name="name"
+                    required
                     placeholder="Your name" 
                     className="w-full bg-white/50 border border-gray-200 rounded-2xl px-5 py-4 focus:outline-none focus:border-blue-500 focus:ring-4 focus:ring-blue-500/10 transition-all text-gray-800 placeholder-gray-400"
                   />
@@ -68,6 +75,8 @@ const Contact = () => {
                   <input 
                     type="email" 
                     id="email" 
+                    name="email"
+                    required
                     placeholder="Your email address" 
                     className="w-full bg-white/50 border border-gray-200 rounded-2xl px-5 py-4 focus:outline-none focus:border-blue-500 focus:ring-4 focus:ring-blue-500/10 transition-all text-gray-800 placeholder-gray-400"
                   />
@@ -79,6 +88,8 @@ const Contact = () => {
                 <input 
                   type="text" 
                   id="subject" 
+                  name="_subject"
+                  required
                   placeholder="How can I help you?" 
                   className="w-full bg-white/50 border border-gray-200 rounded-2xl px-5 py-4 focus:outline-none focus:border-blue-500 focus:ring-4 focus:ring-blue-500/10 transition-all text-gray-800 placeholder-gray-400"
                 />
@@ -88,6 +99,8 @@ const Contact = () => {
                 <label htmlFor="message" className="text-sm font-bold text-gray-700 tracking-wide uppercase">Message</label>
                 <textarea 
                   id="message" 
+                  name="message"
+                  required
                   rows={5}
                   placeholder="Write your message here..." 
                   className="w-full bg-white/50 border border-gray-200 rounded-2xl px-5 py-4 focus:outline-none focus:border-blue-500 focus:ring-4 focus:ring-blue-500/10 transition-all text-gray-800 placeholder-gray-400 resize-none"
@@ -95,11 +108,11 @@ const Contact = () => {
               </div>
 
               <button 
-                type="button" 
+                type="submit" 
                 className="group flex items-center justify-center gap-3 w-full sm:w-fit px-10 py-4 mt-2 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-full font-semibold shadow-[0_10px_20px_rgba(37,99,235,0.2)] hover:shadow-[0_15px_30px_rgba(37,99,235,0.35)] hover:-translate-y-1 transition-all duration-300 text-lg"
               >
-                Send Message
-                <Send size={18} className="transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                <span>Send Message</span>
+                <Send size={20} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
               </button>
             </form>
           </motion.div>
