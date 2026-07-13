@@ -191,7 +191,7 @@ demo: "https://interviewerr.vercel.app/",
   image: project3,
 
   github: "https://github.com/himanshu561hi/Event-Finder",
-  demo: "#",
+  demo: "https://eventsyncc.vercel.app/",
   }
 ];
 
