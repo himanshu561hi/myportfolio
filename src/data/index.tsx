@@ -190,7 +190,7 @@ demo: "https://interviewerr.vercel.app/",
 
   image: project3,
 
-  github: "#",
+  github: "https://github.com/himanshu561hi/Event-Finder",
   demo: "#",
   }
 ];
@@ -243,7 +243,7 @@ export const profiles = [
   {
     platform: "LeetCode",
     description: "Check out my progress on Data Structures and Algorithms.",
-    link: "https://leetcode.com/u/HimanshuGupta_561/",
+    link: "https://leetcode.com/u/himanshu561hi/",
     icon: <SiLeetcode />,
     iconColor: "text-yellow-600",
   },
