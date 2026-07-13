@@ -1,10 +1,11 @@
 import React, { useEffect, useRef } from 'react';
 import { motion } from 'motion/react';
 import Typed from 'typed.js';
-import { FaGithub, FaLinkedin, FaInstagram, FaEnvelope } from 'react-icons/fa';
-import { SiLeetcode, SiWakatime, SiReact, SiNodedotjs, SiMongodb, SiTypescript, SiGit } from 'react-icons/si';
+
+import { SiReact, SiNodedotjs, SiMongodb, SiTypescript, SiGit } from 'react-icons/si';
 import { Sparkles, ChevronDown } from 'lucide-react';
 import himanshuImg from '../assets/him.png';
+import { socialLinks } from '../data';
 
 const Hero = () => {
   const typedRef = useRef(null);
@@ -29,14 +30,7 @@ const Hero = () => {
     };
   }, []);
 
-  const socialLinks = [
-    { icon: <FaGithub size={22} />, href: 'https://github.com/himanshu561hi', label: 'GitHub' },
-    { icon: <FaLinkedin size={22} />, href: 'https://www.linkedin.com/in/himanshu561hi/', label: 'LinkedIn' },
-    { icon: <SiWakatime size={22} />, href: 'https://wakatime.com/@himanshu561hi', label: 'WakaTime' },
-    { icon: <FaInstagram size={22} />, href: 'https://www.instagram.com/_oye_himanshu/', label: 'Instagram' },
-    { icon: <FaEnvelope size={22} />, href: 'mailto:himanshu561hi@gmail.com', label: 'Email' },
-    { icon: <SiLeetcode size={22} />, href: 'https://leetcode.com/u/himanshu561hi/', label: 'LeetCode' },
-  ];
+
 
   return (
     <section id="home" className="relative w-full min-h-screen flex items-center justify-center bg-transparent pt-20 overflow-hidden">
@@ -59,12 +53,12 @@ const Hero = () => {
           </div>
           
           {/* Main Heading */}
-          <h1 className="text-[50px] sm:text-[62px] lg:text-[72px] whitespace-nowrap font-space font-extrabold leading-[1.05] mb-3 tracking-tight text-gray-900">
+          <h1 className="text-[38px] sm:text-[52px] lg:text-[72px] whitespace-nowrap font-space font-extrabold leading-[1.05] mb-3 tracking-tight text-gray-900">
             Himanshu Gupta
           </h1>
           
           {/* Animated Typing Role */}
-          <div className="text-[22px] sm:text-[28px] lg:text-[32px] font-bold text-gray-800 mb-5 h-[40px] font-inter">
+          <div className="text-[20px] sm:text-[26px] lg:text-[32px] font-bold text-gray-800 mb-5 h-[40px] font-inter">
              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600" ref={typedRef}></span>
           </div>
           
@@ -140,9 +134,9 @@ const Hero = () => {
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
-          className="w-full lg:w-[45%] flex justify-center items-center relative order-1 lg:order-2 h-[380px] lg:h-[500px]"
+          className="w-full lg:w-[45%] flex justify-center items-center relative order-1 lg:order-2 h-[320px] sm:h-[380px] lg:h-[500px] mt-6 lg:mt-0"
         >
-          <div className="relative flex items-center justify-center w-[280px] h-[280px] sm:w-[350px] sm:h-[350px] lg:w-[380px] lg:h-[380px]">
+          <div className="relative flex items-center justify-center w-[250px] h-[250px] sm:w-[320px] sm:h-[320px] lg:w-[380px] lg:h-[380px]">
             
             {/* Animated Gradient Rings */}
             <motion.div 

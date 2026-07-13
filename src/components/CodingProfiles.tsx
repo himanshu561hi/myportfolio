@@ -1,43 +1,11 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { FaGithub, FaLinkedin } from 'react-icons/fa';
-import { SiLeetcode, SiGeeksforgeeks } from 'react-icons/si';
 import { ExternalLink } from 'lucide-react';
-
-const profiles = [
-  {
-    platform: "GitHub",
-    description: "Explore my open-source projects, contributions, and daily commits.",
-    link: "https://github.com/himanshu561hi",
-    icon: <FaGithub />,
-    iconColor: "text-gray-900",
-  },
-  {
-    platform: "LinkedIn",
-    description: "Connect with me for professional updates and collaborations.",
-    link: "https://www.linkedin.com/in/himanshu561hi/",
-    icon: <FaLinkedin />,
-    iconColor: "text-blue-700",
-  },
-  {
-    platform: "LeetCode",
-    description: "Check out my progress on Data Structures and Algorithms.",
-    link: "https://leetcode.com/u/HimanshuGupta_561/",
-    icon: <SiLeetcode />,
-    iconColor: "text-yellow-600",
-  },
-  {
-    platform: "GeeksforGeeks",
-    description: "Practicing coding challenges and computer science concepts.",
-    link: "https://www.geeksforgeeks.org/user/himanshuguqp9i/",
-    icon: <SiGeeksforgeeks />,
-    iconColor: "text-green-600",
-  }
-];
+import { profiles } from '../data';
 
 const CodingProfiles = () => {
   return (
-    <section id="profiles" className="relative w-full py-[80px] bg-transparent overflow-hidden">
+    <section id="profiles" className="relative w-full py-[50px] md:py-[80px] bg-transparent overflow-hidden">
       <div className="max-w-[1200px] w-full mx-auto px-6 flex flex-col items-center">
         
         {/* Header Section */}
@@ -57,7 +25,7 @@ const CodingProfiles = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-[40px] sm:text-[48px] lg:text-[54px] font-space font-extrabold text-gray-900 mb-6 leading-[1.1] tracking-tight"
+            className="text-[32px] sm:text-[48px] lg:text-[54px] font-space font-extrabold text-gray-900 mb-6 leading-[1.1] tracking-tight"
           >
             Find Me Online
           </motion.h2>

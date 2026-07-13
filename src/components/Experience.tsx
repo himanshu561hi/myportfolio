@@ -2,49 +2,11 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { Briefcase } from 'lucide-react';
 
-const experiences = [
-  {
-    company: "Code-A-Nova",
-    role: "Full Stack Developer Intern",
-    duration: "2026 – Present",
-    description: [
-      "Developed scalable MERN Stack applications.",
-      "Built responsive user interfaces using React and Tailwind CSS.",
-      "Integrated REST APIs and AI services.",
-      "Worked with GitHub-based development workflow.",
-      "Collaborated with team members on real-world projects."
-    ],
-    technologies: ["React.js", "Node.js", "Express.js", "MongoDB", "Tailwind CSS", "Git"]
-  },
-  {
-    company: "Freelance / Personal Projects",
-    role: "Full Stack Developer",
-    duration: "2025 – Present",
-    description: [
-      "Built multiple production-ready web applications.",
-      "Developed AI-powered projects using OpenAI, Gemini and Groq APIs.",
-      "Created responsive dashboards and management systems.",
-      "Focused on performance and clean UI/UX."
-    ],
-    technologies: ["React.js", "TypeScript", "OpenAI API", "Gemini API", "MongoDB", "Vercel"]
-  },
-  {
-    company: "Self Learning & Open Source",
-    role: "Software Development",
-    duration: "2024 – Present",
-    description: [
-      "Solved DSA problems regularly.",
-      "Built personal portfolio and full-stack projects.",
-      "Learned modern web technologies.",
-      "Improved problem-solving and development skills."
-    ],
-    technologies: ["JavaScript", "React", "Node.js", "GitHub", "DSA"]
-  }
-];
+import { experiences } from '../data';
 
 const Experience = () => {
   return (
-    <section id="experience" className="relative w-full py-[80px] bg-transparent overflow-hidden">
+    <section id="experience" className="relative w-full py-[50px] md:py-[80px] bg-transparent overflow-hidden">
       <div className="max-w-[1200px] w-full mx-auto px-6 flex flex-col items-center">
         
         {/* Header Section */}
@@ -64,7 +26,7 @@ const Experience = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-[40px] sm:text-[48px] lg:text-[54px] font-space font-extrabold text-gray-900 mb-6 leading-[1.1] tracking-tight"
+            className="text-[32px] sm:text-[48px] lg:text-[54px] font-space font-extrabold text-gray-900 mb-6 leading-[1.1] tracking-tight"
           >
             My Professional Journey
           </motion.h2>
@@ -89,27 +51,27 @@ const Experience = () => {
             whileInView={{ height: '100%' }}
             viewport={{ once: true }}
             transition={{ duration: 1.5, ease: "easeInOut" }}
-            className="absolute left-[38px] md:left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-blue-500 via-purple-500 to-transparent transform md:-translate-x-1/2 rounded-full"
+            className="absolute left-[12px] md:left-1/2 top-0 bottom-0 w-[3px] md:w-1 bg-gradient-to-b from-blue-500 via-purple-500 to-transparent transform md:-translate-x-1/2 rounded-full"
           />
 
           {experiences.map((exp, index) => {
             const isEven = index % 2 === 0;
 
             return (
-              <div key={index} className={`relative flex flex-col md:flex-row items-center w-full mb-16 last:mb-0 ${isEven ? 'md:justify-start' : 'md:justify-end'}`}>
+              <div key={index} className={`relative flex flex-col md:flex-row items-center w-full mb-10 md:mb-16 last:mb-0 ${isEven ? 'md:justify-start' : 'md:justify-end'}`}>
                 
                 {/* Circular Node */}
-                <div className="absolute left-[38px] md:left-1/2 w-[22px] h-[22px] rounded-full bg-gradient-to-r from-blue-500 to-purple-600 transform -translate-x-1/2 shadow-[0_0_20px_rgba(37,99,235,0.6)] z-10 mt-8 md:mt-0 flex items-center justify-center">
-                  <div className="w-2.5 h-2.5 bg-white rounded-full"></div>
+                <div className="absolute left-[12px] md:left-1/2 w-[16px] h-[16px] md:w-[22px] md:h-[22px] rounded-full bg-gradient-to-r from-blue-500 to-purple-600 transform -translate-x-1/2 shadow-[0_0_15px_rgba(37,99,235,0.6)] z-10 items-center justify-center top-8 md:top-auto flex">
+                  <div className="w-1.5 h-1.5 md:w-2.5 md:h-2.5 bg-white rounded-full"></div>
                 </div>
                 
                 {/* Experience Card */}
                 <motion.div 
-                  initial={{ opacity: 0, x: isEven ? -50 : 50, y: 20 }}
+                  initial={{ opacity: 0, x: isEven ? -20 : 20, y: 20 }}
                   whileInView={{ opacity: 1, x: 0, y: 0 }}
                   viewport={{ once: true, amount: 0.2 }}
                   transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
-                  className={`w-full md:w-[47%] pl-[76px] md:pl-0 ${isEven ? 'md:pr-[50px]' : 'md:pl-[50px]'}`}
+                  className={`w-full md:w-[47%] pl-[40px] md:pl-0 ${isEven ? 'md:pr-[50px]' : 'md:pl-[50px]'}`}
                 >
                   <div className="p-6 sm:p-7 bg-white/30 backdrop-blur-xl border border-white/50 shadow-[0_8px_32px_rgba(31,38,135,0.1)] rounded-[24px] hover:shadow-[0_8px_25px_rgba(37,99,235,0.12)] hover:-translate-y-1 transition-all duration-300">
                     

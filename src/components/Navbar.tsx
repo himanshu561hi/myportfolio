@@ -14,18 +14,9 @@ const navLinks = [
 const Navbar = () => {
   const [activeSection, setActiveSection] = useState('Home');
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  useEffect(() => {
-    // Add smooth scrolling behavior for links
+    // Add smooth scrolling behavior for links with offset for fixed navbar
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', (e) => {
         e.preventDefault();
@@ -33,7 +24,12 @@ const Navbar = () => {
         if(targetAttr) {
           const target = document.querySelector(targetAttr);
           if (target) {
-            target.scrollIntoView({ behavior: 'smooth' });
+            const navHeight = 40; // Account for navbar height but respect section padding
+            const targetPosition = target.getBoundingClientRect().top + window.scrollY - navHeight;
+            window.scrollTo({
+              top: targetPosition,
+              behavior: 'smooth'
+            });
           }
         }
       });
@@ -44,64 +40,48 @@ const Navbar = () => {
     <motion.nav
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
-        scrolled 
-          ? 'h-[70px] bg-white/40 backdrop-blur-xl border-b border-white/50 shadow-[0_4px_30px_rgba(0,0,0,0.03)]' 
-          : 'h-[90px] bg-transparent'
-      }`}
+      transition={{ duration: 0.5, ease: "easeOut" }}
+      className="fixed top-6 left-1/2 -translate-x-1/2 w-[calc(100%-48px)] max-w-[1152px] h-[72px] bg-white/40 backdrop-blur-xl border border-white/50 shadow-[0_8px_32px_rgba(31,38,135,0.08)] rounded-[24px] z-50"
     >
-      <div className="max-w-[1280px] mx-auto px-6 h-full flex items-center justify-between">
+      <div className="w-full h-full px-6 md:px-8 flex items-center justify-between">
         {/* Left Side: Logo + Name */}
         <a href="#home" className="flex items-center gap-3 z-50 group">
-          <div className="w-10 h-10 bg-gradient-to-br from-yellow-400 to-yellow-200 text-black font-extrabold flex items-center justify-center rounded-[12px] text-[15px] font-mono tracking-tighter shadow-[0_2px_10px_rgba(250,204,21,0.3)] border border-yellow-100 group-hover:scale-105 group-hover:rotate-3 transition-transform duration-300">
+          <div className="w-9 h-9 bg-[#F7DF1E] text-black font-bold flex items-center justify-center rounded-xl text-sm font-mono tracking-tighter shadow-md group-hover:scale-105 transition-transform duration-300">
             JS
           </div>
-          <span className="text-[22px] font-space font-bold text-gray-900 tracking-tight group-hover:text-blue-600 transition-colors duration-300">
+          <span className="text-[22px] font-space font-bold text-gray-900 leading-none tracking-tight group-hover:text-blue-600 transition-colors">
             Himanshu
           </span>
         </a>
 
         {/* Right Side: Navigation Links (Desktop) */}
-        <div className="hidden md:flex items-center gap-1.5 h-full">
+        <div className="hidden md:flex items-center gap-2 h-full">
           {navLinks.map((link) => (
             <a
               key={link.name}
               href={link.href}
               onClick={() => setActiveSection(link.name)}
-              className={`relative h-[42px] px-5 flex items-center justify-center text-[15px] font-semibold transition-colors duration-300 rounded-full ${
-                activeSection === link.name 
-                  ? 'text-blue-700' 
-                  : 'text-gray-600 hover:text-gray-900 hover:bg-white/30'
+              className={`relative px-4 py-2 flex items-center text-[15px] font-semibold transition-all duration-300 rounded-full ${
+                activeSection === link.name ? 'text-blue-700' : 'text-gray-600 hover:text-gray-900 hover:bg-white/20'
               }`}
             >
               <span className="relative z-10">{link.name}</span>
               
-              {/* Active Pill Background */}
+              {/* Active Glass Pill */}
               {activeSection === link.name && (
                 <motion.div
                   layoutId="nav-pill"
-                  className="absolute inset-0 bg-white/60 shadow-[0_2px_10px_rgba(0,0,0,0.04)] rounded-full border border-white/80"
+                  className="absolute inset-0 bg-white/60 shadow-[0_2px_10px_rgba(0,0,0,0.05)] border border-white/70 rounded-full -z-10"
                   transition={{ type: "spring", stiffness: 400, damping: 30 }}
                 />
               )}
             </a>
           ))}
-          
-          {/* Hire Me / Resume Button */}
-          <div className="ml-2 pl-4 border-l border-gray-200/50">
-            <a 
-              href="#contact"
-              className="h-[42px] px-6 inline-flex items-center justify-center text-[15px] font-bold text-white bg-gray-900 rounded-full hover:bg-blue-600 hover:shadow-[0_4px_14px_rgba(37,99,235,0.3)] transition-all duration-300 hover:-translate-y-0.5"
-            >
-              Let's Talk
-            </a>
-          </div>
         </div>
 
         {/* Mobile Hamburger Menu */}
         <button
-          className="md:hidden text-gray-900 z-50 p-2.5 bg-white/50 backdrop-blur-md rounded-xl border border-white/60 shadow-sm active:scale-95 transition-all"
+          className="md:hidden text-gray-900 z-50 p-2.5 bg-white/40 hover:bg-white/60 rounded-full transition-colors border border-white/50 shadow-sm"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
           {isMobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
@@ -112,11 +92,11 @@ const Navbar = () => {
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -10, scale: 0.98 }}
+            initial={{ opacity: 0, y: -10, scale: 0.95 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: -10, scale: 0.98 }}
-            transition={{ duration: 0.25, ease: "easeOut" }}
-            className="absolute top-[80px] left-4 right-4 bg-white/70 backdrop-blur-2xl shadow-[0_20px_40px_rgba(0,0,0,0.1)] border border-white/60 rounded-3xl z-40 flex flex-col md:hidden overflow-hidden p-2"
+            exit={{ opacity: 0, y: -10, scale: 0.95 }}
+            transition={{ duration: 0.2 }}
+            className="absolute top-[80px] left-0 w-full bg-white/30 backdrop-blur-2xl shadow-[0_15px_40px_rgba(31,38,135,0.15)] border border-white/50 rounded-3xl z-40 flex flex-col md:hidden overflow-hidden p-3"
           >
             {navLinks.map((link) => (
               <a
@@ -126,23 +106,15 @@ const Navbar = () => {
                   setActiveSection(link.name);
                   setIsMobileMenuOpen(false);
                 }}
-                className={`p-4 mx-2 my-1 rounded-2xl text-[16px] font-bold transition-all duration-300 flex items-center ${
+                className={`p-4 rounded-2xl mb-2 last:mb-0 text-[16px] font-semibold transition-all ${
                   activeSection === link.name 
-                    ? 'text-blue-700 bg-white/80 shadow-sm border border-white/50' 
-                    : 'text-gray-700 hover:bg-white/40'
+                  ? 'text-blue-700 bg-white/60 shadow-sm border border-white/70' 
+                  : 'text-gray-700 hover:bg-white/40 hover:text-gray-900'
                 }`}
               >
                 {link.name}
               </a>
             ))}
-            
-            <a 
-              href="#contact"
-              onClick={() => setIsMobileMenuOpen(false)}
-              className="mt-2 mx-2 mb-2 p-4 rounded-2xl text-center text-[16px] font-bold text-white bg-gray-900 hover:bg-blue-600 transition-colors"
-            >
-              Let's Talk
-            </a>
           </motion.div>
         )}
       </AnimatePresence>

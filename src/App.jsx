@@ -14,12 +14,6 @@ import { AnimatedNetworkBackground } from './components/AnimatedNetworkBackgroun
 function App() {
   return (
     <div className="relative min-h-screen bg-transparent">
-      {/* Fixed Background Gradient Blobs to enhance Glassmorphism */}
-      <div className="fixed inset-0 w-full h-full overflow-hidden z-[-10] pointer-events-none">
-        <div className="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] bg-blue-500/30 rounded-full blur-[100px]"></div>
-        <div className="absolute bottom-[-10%] right-[10%] w-[600px] h-[600px] bg-indigo-500/30 rounded-full blur-[100px]"></div>
-      </div>
-      
       <AnimatedNetworkBackground />
       <Navbar />
       <Hero />

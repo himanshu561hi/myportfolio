@@ -2,51 +2,14 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { ExternalLink, Github, CheckCircle2 } from 'lucide-react';
 
-const projects = [
-  {
-    title: "AI Mock Interview Coach",
-    description: "An AI-powered interview preparation platform featuring voice interaction, resume analysis, AI feedback, authentication, and interview history.",
-    tech: ["React", "Node.js", "Express", "MongoDB", "Gemini API", "Groq API", "Vapi AI"],
-    features: ["AI Voice Interview", "Authentication", "Interview Reports", "Resume Analysis", "Performance Dashboard"],
-    image: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?q=80&w=2070&auto=format&fit=crop", 
-    github: "#",
-    demo: "#",
-  },
-  {
-    title: "School ERP System",
-    description: "A modern multi-tenant ERP platform with role-based access, student management, teacher management, dashboards, and analytics.",
-    tech: ["React", "TypeScript", "Tailwind", "Node.js", "MongoDB"],
-    features: ["Role-based Access", "Student Management", "Teacher Portal", "Analytics Dashboard"],
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop", 
-    github: "#",
-    demo: "#",
-  },
-  {
-    title: "AI Career Coach",
-    description: "Career guidance platform powered by AI that helps users generate resumes, roadmaps, interview preparation, and personalized learning.",
-    tech: ["React", "Node", "MongoDB", "OpenAI API"],
-    features: ["Resume Generation", "Career Roadmaps", "Interview Prep", "Personalized Learning"],
-    image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop", 
-    github: "#",
-    demo: "#",
-  },
-  {
-    title: "Event Finder Platform",
-    description: "Location-based event discovery platform with authentication, search, categories, maps, and booking features.",
-    tech: ["React", "Express", "MongoDB", "Google Maps API"],
-    features: ["Location Search", "Interactive Maps", "Event Booking", "User Authentication"],
-    image: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=2070&auto=format&fit=crop", 
-    github: "#",
-    demo: "#",
-  }
-];
+import { projects } from '../data';
 
 const Projects = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const activeProject = projects[activeIndex];
 
   return (
-    <section id="projects" className="relative w-full py-[80px] bg-transparent overflow-hidden">
+    <section id="projects" className="relative w-full py-[50px] md:py-[80px] bg-transparent overflow-hidden">
       <div className="max-w-[1200px] w-full mx-auto px-6 flex flex-col items-center">
         
         {/* Header Section */}
@@ -66,7 +29,7 @@ const Projects = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-[40px] sm:text-[48px] lg:text-[54px] font-space font-extrabold text-gray-900 mb-6 leading-[1.1] tracking-tight"
+            className="text-[32px] sm:text-[48px] lg:text-[54px] font-space font-extrabold text-gray-900 mb-6 leading-[1.1] tracking-tight"
           >
             Interactive Showcase
           </motion.h2>
