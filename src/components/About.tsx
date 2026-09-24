@@ -2,6 +2,8 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { FaCode, FaLaptopCode, FaBriefcase, FaBrain } from 'react-icons/fa';
 
+import resumePdf from '../assets/Resume.pdf';
+
 const Highlight = ({ children }: { children: React.ReactNode }) => (
   <span className="font-semibold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
     {children}
@@ -89,7 +91,7 @@ const About = () => {
             className="flex flex-col sm:flex-row justify-center gap-5 w-full sm:w-auto"
           >
             <a 
-              href="/resume.pdf"
+              href={resumePdf}
               download="Himanshu_Gupta_Resume.pdf"
               className="px-9 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-full font-semibold shadow-[0_10px_20px_rgba(37,99,235,0.2)] hover:shadow-[0_15px_30px_rgba(37,99,235,0.35)] hover:-translate-y-1 transition-all duration-300 text-center text-lg"
             >

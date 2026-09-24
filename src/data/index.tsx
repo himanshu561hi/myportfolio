@@ -1,9 +1,9 @@
 import React from 'react';
-import { 
-  FaReact, FaJsSquare, FaHtml5, FaCss3Alt, FaNodeJs, FaGitAlt, FaGithub, FaRobot, FaMicrophone, FaLinkedin, FaEnvelope, FaInstagram 
+import {
+  FaReact, FaJsSquare, FaHtml5, FaCss3Alt, FaNodeJs, FaGitAlt, FaGithub, FaRobot, FaMicrophone, FaLinkedin, FaEnvelope, FaInstagram
 } from 'react-icons/fa';
-import { 
-  SiNextdotjs, SiTypescript, SiTailwindcss, SiExpress, SiMongodb, SiMysql, SiSupabase, SiPostman, SiVercel, SiNetlify, SiRender, SiOpenai, SiGoogle, SiLeetcode, SiWakatime, SiGeeksforgeeks 
+import {
+  SiNextdotjs, SiTypescript, SiTailwindcss, SiExpress, SiMongodb, SiMysql, SiSupabase, SiPostman, SiVercel, SiNetlify, SiRender, SiOpenai, SiGoogle, SiLeetcode, SiWakatime, SiGeeksforgeeks
 } from 'react-icons/si';
 
 import project1Img from '../assets/project 1.png';
@@ -53,157 +53,161 @@ export const technologies = [
 ];
 
 export const experiences = [
-  
+  {
+    company: "Anethix Labs Private Limited",
+    role: "Software Development Intern",
+    duration: "Sep 2026 – Present",
+    description: [
+      "Contributing to the backend development of a CRM software as part of the startup's software development team.",
+      "Developing and maintaining RESTful APIs and server-side business logic for CRM features.",
+      "Working with database operations, data models, validation, authentication, and API integrations based on project requirements.",
+      "Debugging, testing, and optimizing backend functionality to ensure reliable and scalable application performance.",
+      "Collaborating with the development team throughout the Software Development Lifecycle (SDLC) on a live startup product."
+    ],
+    technologies: [
+      "Node.js",
+      "Express.js",
+      "RESTful APIs",
+      "MongoDB",
+      "SDLC"
+    ]
+  },
   {
     company: "Mirai School of Technology",
     role: "Artificial Intelligence Intern",
-    duration: "Jul 2026 – Present (8 Weeks)",
+    duration: "July 2026 – August 2026",
     description: [
       "Currently participating in an industry-focused software development program.",
-      "Building production-ready projects with modern web technologies.",
-      "Learning scalable application architecture and industry best practices.",
-      "Collaborating on real-world development tasks and technical assignments."
-    ],
-    technologies: [
-      "React.js",
-      "Python",
-      "Artificial Intelligence",
-      "Generative AI",
-      "Machine Learning",
-      "LLMs"
-    ]
-  },
-  {
-    company: "Edunet Foundation",
-    role: "Artificial Intelligence Intern",
-    duration: "May 2026 – Jun 2026 (6 Weeks)",
-    description: [
-      "Completed an intensive AI internship focused on real-world applications.",
-      "Worked with Generative AI, LLMs, and prompt engineering concepts.",
-      "Built AI-powered solutions and explored machine learning workflows.",
-      "Strengthened practical AI development and problem-solving skills."
-    ],
-    technologies: [
-      "Python",
-      "Artificial Intelligence",
-      "Generative AI",
-      "Machine Learning",
-      "LLMs"
-    ]
-  },
-  {
-    company: "The SkyBrisk",
-    role: "Full Stack Developer Intern",
-    duration: "Dec 2025 – May 2026 (6 Months)",
-    description: [
-      "Developed and maintained full-stack web applications using the MERN stack.",
-      "Built responsive user interfaces and integrated REST APIs.",
-      "Collaborated with the development team to deliver scalable features.",
-      "Worked with Git, code reviews, and agile development practices."
+      "Built 5+ AI-powered web applications using React.js, Node.js, and LLM APIs.",
+      "Contributed to scalable application architecture and followed industry best practices for frontend development.",
+      "Developed AI-powered applications by integrating LLM APIs, implementing prompt engineering techniques, and building production-ready frontend features."
     ],
     technologies: [
       "React.js",
       "Node.js",
-      "Express.js",
-      "MongoDB",
-      "JavaScript",
-      "Git"
+      "LLM APIs",
+      "Prompt Engineering",
+      "Generative AI"
     ]
   }
 ];
 export const projects = [
   {
-   title: "AI Interview Platform",
-description:
-  "An AI-powered recruitment platform built for recruiters to automate candidate screening at scale. Conduct 100+ AI voice interviews simultaneously, analyze resumes, generate detailed interview reports, track candidate performance, and make data-driven hiring decisions from a centralized dashboard.",
-
-tech: [
-  "React",
-  "Node.js",
-  "Express",
-  "MongoDB",
-  "Gemini API",
-  "Groq API",
-  "Vapi AI"
-],
-
-features: [
-  "Bulk AI Voice Interviews",
-  "Resume Analysis",
-  "AI Candidate Scoring",
-  "Detailed Interview Reports",
-  "Recruiter Dashboard",
-  "Hiring Decision Management"
-],
-
-image: project1Img,
-
-github: "https://github.com/himanshu561hi/Interviewerr",
-demo: "https://interviewerr.vercel.app/",
-  },
-  {
-    title: "School ERP System",
+    title: "AI Interview Platform (AI Recruiter)",
     description:
-      "Designed a scalable multi-tenant School ERP frontend featuring role-based access, student and teacher management, enterprise dashboards, and a modern admin experience. Backend APIs and authentication are planned for future development.",
-
+      "A real-time AI voice interview platform using Next.js, Gemini API, Vapi AI, and Supabase. Enables AI-powered speech-based interview interactions, dynamic question generation with low latency, and secure session management.",
     tech: [
       "React",
-      "TypeScript",
+      "Next.js",
+      "Node.js",
+      "Express",
+      "Supabase",
+      "Gemini API",
+      "Vapi AI"
+    ],
+    features: [
+      "Real-time AI Voice Interviews",
+      "Dynamic Question Generation",
+      "Speech-Based Interactions",
+      "Secure RBAC Authentication",
+      "Interview Session Management",
+      "Low Latency Communication"
+    ],
+    image: project1Img,
+    github: "https://github.com/himanshu561hi/Interviewerr",
+    demo: "https://interviewerr.vercel.app/",
+  },
+  {
+    title: "School ERP Management System",
+    description:
+      "Engineered a multi-tenant School ERP application using React.js, Vite, and Tailwind CSS with secure RBAC-based authentication. Features modular data tables, dashboards, search filtering, pagination, REST API integration, and complete CRUD functionality.",
+    tech: [
+      "React.js",
+      "Vite",
       "Tailwind CSS",
       "Node.js",
       "MongoDB",
     ],
-
     features: [
       "Multi-Tenant Architecture",
-      "Role-Based Access",
-      "Student & Teacher Management",
-      "Analytics Dashboard",
-      "Responsive UI",
+      "RBAC Authentication & Authorization",
+      "Modular Data Tables & Modals",
+      "REST API Integration & CRUD",
+      "State & Performance Optimization",
     ],
-
-    image: project2, // Local asset
-
+    image: project2,
     github: "https://github.com/himanshu561hi/DigiSchool/",
     demo: "https://digischool-2f3o.onrender.com/",
   },
   {
     title: "Event Finder Platform",
-  description:
-    "A location-based event discovery platform that helps users find nearby events, explore by category, view venues on interactive maps, and book tickets through a seamless, user-friendly interface.",
-
-  tech: [
-    "React",
-    "Node.js",
-    "Express",
-    "MongoDB",
-    "Google Maps API"
-  ],
-
-  features: [
-    "Location-Based Discovery",
-    "Interactive Maps",
-    "Category Filtering",
-    "Event Booking",
-    "User Authentication"
-  ],
-
-  image: project3,
-
-  github: "https://github.com/himanshu561hi/Event-Finder",
-  demo: "https://eventsyncc.vercel.app/",
+    description:
+      "A location-based event discovery platform that helps users find nearby events, explore by category, view venues on interactive maps, and book tickets through a seamless, user-friendly interface.",
+    tech: [
+      "React",
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "Google Maps API"
+    ],
+    features: [
+      "Location-Based Discovery",
+      "Interactive Maps",
+      "Category Filtering",
+      "Event Booking",
+      "User Authentication"
+    ],
+    image: project3,
+    github: "https://github.com/himanshu561hi/Event-Finder",
+    demo: "https://eventsyncc.vercel.app/",
   }
 ];
 
 export const achievements = [
+  {
+    icon: "📜",
+    title: "2nd Position (Track II)",
+    description: "NEXUS 2026 – Pre Conference Paper Writing Competition",
+    location: "Hi-Tech Institute of Eng. & Tech., Ghaziabad",
+    details:
+      "Secured 2nd Position in Track II at NEXUS 2026, a Pre-Conference Paper Writing Competition organized by Hi-Tech Institute of Engineering & Technology in September 2026.",
+    images: []
+  },
+  {
+    icon: "🇮🇳",
+    title: "3rd Position",
+    description: "Har Ghar Tiranga Quiz Competition",
+    location: "Hi-Tech Institute of Eng. & Tech., Ghaziabad",
+    details:
+      "Secured 3rd Position in the Quiz Competition held on 17 August 2026 as part of the Har Ghar Tiranga celebrations at Hi-Tech Institute of Engineering & Technology, Ghaziabad.",
+    images: []
+  },
+  {
+    icon: "🥉",
+    title: "3rd Position",
+    description: "VARCHASVA 2026",
+    location: "BITS&BYTES, Noida",
+    details:
+      "Secured 3rd Position at VARCHASVA 2026, an inter-college technical competition organized by BITS&BYTES Noida in August 2026.",
+    images: []
+  },
   {
     icon: "🏆",
     title: "Top 75 Teams",
     description: "Hacknovate 7.0 – International Hackathon",
     location: "ABESIT, Ghaziabad",
     details:
-      "Selected among the Top 75 teams out of 10,000+ participants in Hacknovate 7.0, a 30-hour International Hybrid Hackathon. Collaborated with the team to design and build an innovative solution under strict time constraints while presenting the final prototype to industry experts.",
+      "Secured selection among Top 75 teams out of 10,000+ participants in Hacknovate 7.0, a 30-hour International Hybrid Hackathon organized by ABESIT Ghaziabad in April 2026.",
     images: [achievement2_1, achievement2_2]
+  },
+  {
+    icon: "🥉",
+    title: "3rd Position",
+    description: "TechnoHack 3.0 – Project Exhibition",
+    location: "INMANTEC, Ghaziabad",
+    details:
+      "Secured 3rd Position in TechnoHack 3.0 – Innovation Ignite project exhibition organized by INMANTEC Institutions Ghaziabad in April 2026.",
+    images: [achievement3_1, achievement3_2]
   },
   {
     icon: "🥇",
@@ -211,17 +215,8 @@ export const achievements = [
     description: "SCROLLS'25 – National Technical Paper Presentation",
     location: "AKGEC, Ghaziabad",
     details:
-      "Won 1st Place in the National-Level Technical Paper Writing Competition (SCROLLS'25). Presented a research paper demonstrating technical knowledge, innovation, and presentation skills before an expert evaluation panel.",
+      "Secured 1st Place in National-Level Technical Paper Writing Competition (SCROLLS'25) organized by AKGEC Ghaziabad in October 2025.",
     images: [achievement1_1, achievement1_2, achievement1_3]
-  },
-  {
-    icon: "🥉",
-    title: "3rd Place",
-    description: "TechnoHack 3.0 – Project Exhibition",
-    location: "INMANTEC, Ghaziabad",
-    details:
-      "Secured 3rd Position in TechnoHack 3.0 – Innovation Ignite Project Exhibition by presenting an innovative software solution and demonstrating its technical implementation, usability, and real-world impact.",
-    images: [achievement3_1, achievement3_2]
   }
 ];
 
